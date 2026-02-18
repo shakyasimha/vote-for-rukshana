@@ -8,6 +8,9 @@ import {
   roboto,
 } from "@/ui/fonts";
 
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok, FaGlobe } from "react-icons/fa";
+
 // import enContent from "@/content/en.mdx";
 // import neContent from "@/content/ne.mdx";
 // import { content } from "@/content/content";
@@ -95,7 +98,7 @@ export default function Home() {
           </h2>
       </section>
 
-      {/* Links / Publications */}
+      {/* Links */}
       <section id="links" className="w-full bg-[#292f8c] text-[#f5f5fc] py-12">
         <h2
             className={`${font[lang].headerFont} ${
@@ -109,7 +112,59 @@ export default function Home() {
               : "जि नापं सामाजिक संजालय् स्वानादिसँ"
             }
           </h2>
+
           {/* Add section content here */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
+            {/* Facebook */}
+            <Link
+              href="https://www.facebook.com/rukshanainpolitics"
+              target="_blank"
+              className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
+            >
+              <FaFacebookF size={32} />
+              Facebook
+            </Link>
+
+            {/* Instagram */}
+            <Link
+              href="https://www.instagram.com/rukshanainpolitics"
+              target="_blank"
+              className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
+            >
+              <FaInstagram size={32} />
+              Instagram
+            </Link>
+
+            {/* X */}
+            <Link
+              href="https://x.com/RukshanaNPolicy"
+              target="_blank"
+              className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
+            >
+              <FaTwitter size={32} />
+              X
+            </Link>
+
+            {/* TikTok */}
+            <Link
+              href="https://www.tiktok.com/@rukshanainpolitics"
+              target="_blank"
+              className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
+            >
+              <FaTiktok size={32} />
+              TikTok
+            </Link>
+
+            {/* Personal Website */}
+            <Link
+              href="https://rukshanakapali.com.np/"
+              target="_blank"
+              className="flex flex-col items-center gap-2 text-white hover:underline text-2xl sm:col-span-2"
+            >
+              <FaGlobe size={32} />
+              Personal Website
+            </Link>
+          </div>
       </section>
 
       {/* Contact */}
