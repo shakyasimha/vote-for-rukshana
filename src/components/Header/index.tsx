@@ -33,7 +33,7 @@ export default function Header({ title }: HeaderProps) {
     <>
       {/* ── Navbar name overlay — renders centered in the fixed navbar ── */}
       <div
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center pointer-events-none transition-all duration-500 h-[64px] ${
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center pointer-events-none transition-all duration-500 h-16 ${
           scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
         }`}
       >
@@ -45,7 +45,7 @@ export default function Header({ title }: HeaderProps) {
       </div>
 
       {/* ── Main header ── */}
-      <div className="flex flex-col pt-[64px]">
+      <div className="flex flex-col pt-16">
         {/* Cover photo */}
         <div className="w-full h-64 relative">
           <Image
@@ -57,9 +57,9 @@ export default function Header({ title }: HeaderProps) {
         </div>
 
         {/* Profile picture + name + language links */}
-        <div className="flex flex-col md:flex-row items-center mt-[-4rem] px-4 w-full max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center -mt-16 px-4 w-full max-w-4xl mx-auto">
           {/* Profile picture */}
-          <div className="relative flex-shrink-0 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-white mx-auto md:mx-0 z-10 shadow-md">
+          <div className="relative shrink-0 w-40 h-40 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-white mx-auto md:mx-0 z-10 shadow-md">
             <Image
               src="/rukshana-1-copy.jpg"
               alt="rukshana profile picture"

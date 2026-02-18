@@ -4,36 +4,60 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { alegreyaSC, nithyaRanjana, notoSerifDevanagari } from "@/ui/fonts";
 
-const title = {
+const content = {
   en: {
-    text: "I am Rukshana Kapali.",
-    font: alegreyaSC.className,
+    name: "Rukshana Kapali",
+    nameFont: alegreyaSC.className,
+    bodyFont: alegreyaSC.className,
+    lines: [
+      "Candidate for House of Representatives Election, 2026.",
+      "Proportional Representation Candidate no. 2, Progressive Democratic Party.",
+    ],
+    slogan: "Vote for Social Justice. Vote for Change.",
   },
   ne: {
-    text: "म रुक्शना कपाली हुँ।",
-    font: notoSerifDevanagari.className,
+    name: "रुक्शना कपाली",
+    nameFont: notoSerifDevanagari.className,
+    bodyFont: notoSerifDevanagari.className,
+    lines: [
+      "प्रतिनिधि सभा निर्वाचन, २०८२ को उम्मेदवार ।",
+      "समानुपातिक उम्मेदवार, क्रम संख्या २, प्रगतिशील लोकतान्त्रिक पार्टी ।",
+    ],
+    slogan: "सामाजिक न्यायका लागि मतदान। परिवर्तनका लागि मतदान।",
   },
   new: {
-    text: "जि रुक्शना कपाली खः।",
-    font: nithyaRanjana.className,
+    name: "रुक्शना कपाली",
+    nameFont: nithyaRanjana.className,
+    bodyFont: notoSerifDevanagari.className,
+    lines: [
+      "प्रतिनिधि सभा निर्वाचन, २०८२ को उम्मेदवार ।",
+      "समानुपातिक उम्मेदवार, क्रम संख्या २, प्रगतिशील लोकतान्त्रिक पार्टी ।",
+    ],
+    slogan: "सामाजिक न्यायका लागि मतदान। परिवर्तनका लागि मतदान।",
   },
 };
 
 const NAVBAR_NAME = "Rukshana Kapali";
+
+const inlayStyle = {
+  color: "#f5f5f5",
+  textShadow:
+    "1px 1px 0px #6b7280, 2px 2px 0px #4b5563, 3px 3px 6px rgba(0,0,0,0.5)",
+};
 
 type ProfileProps = {
   lang?: "en" | "ne" | "new";
 };
 
 export default function Profile({ lang = "new" }: ProfileProps) {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const nameRef = useRef<HTMLHeadingElement>(null);
   const [scrolled, setScrolled] = useState(false);
-  const titleContent = title[lang];
+  const { name, nameFont, bodyFont, lines, slogan } = content[lang];
 
   useEffect(() => {
     const onScroll = () => {
-      if (!titleRef.current) return;
-      const { bottom } = titleRef.current.getBoundingClientRect();
+      if (!nameRef.current) return;
+      const { bottom } = nameRef.current.getBoundingClientRect();
       setScrolled(bottom < 64);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -44,7 +68,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
     <>
       {/* ── Name overlay centered in the fixed navbar ── */}
       <div
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center pointer-events-none h-[64px] transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center pointer-events-none h-16 transition-all duration-500 ${
           scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
         }`}
       >
@@ -55,34 +79,52 @@ export default function Profile({ lang = "new" }: ProfileProps) {
 
       {/* ── Profile section ── */}
       <div className="w-full bg-[#292f8c]">
-      <div className="flex flex-col md:flex-row items-center gap-10 px-8 py-16 w-full max-w-4xl mx-auto">
-        {/* Profile picture — left */}
-        <div className="relative flex-shrink-0 w-50 h-50 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
-          <Image
-            src="/rukshana-1-copy.jpg"
-            alt="rukshana profile picture"
-            fill
-            className="object-cover"
-          />
-        </div>
+        <div className="flex flex-col md:flex-row items-center gap-10 px-8 py-16 w-full max-w-4xl mx-auto">
 
-        {/* Title — right */}
-        <div className="flex-1 text-center md:text-left">
-          <h1
-            ref={titleRef}
-            style={{
-              color: "#f5f5f5",
-              textShadow:
-                "1px 1px 0px #6b7280, 2px 2px 0px #4b5563, 3px 3px 6px rgba(0,0,0,0.5)",
-            }}
-            className={`${titleContent.font} ${lang === "new" ? "" : "font-bold"} text-5xl leading-tight transition-opacity duration-500 ${
-              scrolled ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            {titleContent.text}
-          </h1>
+          {/* Profile picture — left */}
+          <div className="relative shrink-0 w-50 h-50 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
+            <Image
+              src="/rukshana-1-copy.jpg"
+              alt="rukshana profile picture"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Text — right */}
+          <div className="flex-1 flex flex-col gap-3 text-center md:text-left">
+            {/* Name */}
+            <h1
+              ref={nameRef}
+              style={inlayStyle}
+              className={`${nameFont} ${lang === "new" ? "" : "font-bold"} text-4xl md:text-5xl leading-tight transition-opacity duration-500 ${
+                scrolled ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              {name}
+            </h1>
+
+            {/* Supporting lines */}
+            {lines.map((line, i) => (
+              <p
+                key={i}
+                style={inlayStyle}
+                className={`${bodyFont} text-base md:text-lg leading-snug opacity-90`}
+              >
+                {line}
+              </p>
+            ))}
+
+            {/* Slogan — italic */}
+            <p
+              style={inlayStyle}
+              className={`${bodyFont} text-base md:text-lg italic opacity-80 mt-2`}
+            >
+              {slogan}
+            </p>
+          </div>
+
         </div>
-      </div>
       </div>
     </>
   );

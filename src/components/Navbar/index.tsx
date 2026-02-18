@@ -36,7 +36,7 @@ export default function Navbar() {
       {/* ── Desktop Navbar ── */}
       <nav className="hidden md:block fixed top-0 left-0 right-0 bg-[#292f8c] z-40">
         {/* z-40 so Header's z-50 name overlay sits above */}
-        <div className="relative flex items-center px-8 h-[64px]">
+        <div className="relative flex items-center px-8 h-16">
           {/* LEFT — nav links */}
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
@@ -57,7 +57,7 @@ export default function Navbar() {
 
       {/* ── Mobile Navbar ── */}
       <nav className="md:hidden fixed top-0 left-0 right-0 bg-[#292f8c] z-40">
-        <div className="relative flex items-center justify-between px-4 h-[56px]">
+        <div className="relative flex items-center justify-between px-4 h-14">
           {/* LEFT — burger */}
           <button
             onClick={toggleMenu}
