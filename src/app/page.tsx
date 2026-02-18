@@ -8,17 +8,18 @@ import {
   roboto,
 } from "@/ui/fonts";
 
+// import enContent from "@/content/en.mdx";
+// import neContent from "@/content/ne.mdx";
+
 import { useLanguage } from "@/lib/languageContext";
 // import { experienceTabs, publicationTabs } from "@/data/tabContent";
-import { useState } from "react";
+// import { useState } from "react";
 
 // // Importing components here
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
 // import MdxContent from "@/components/MdxContent";
-// import Tabs from "@/components/Tabs";
-// import TravelMap from "@/components/TravelMap";
 
 const font = {
   en: {
@@ -39,6 +40,8 @@ const font = {
 export default function Home() {
   const { lang } = useLanguage();
   // const [activeSection, setActiveSection] = useState("about");
+  // const source = lang === "en" ? enContent : neContent;
+  // const mdxContent = lang === "en" ? enContent : neContent;
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f7f7f7]">
@@ -50,20 +53,14 @@ export default function Home() {
       </div>
 
       {/* Introduction */}
-      <section id="about" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
-          About Me
-        </h2>
-        <div className={`${font[lang].bodyFont} prose prose-gray max-w-none text-justify text-gray-700 [&_p]:mb-4`}>
-          About Me (in depth)
-          {/* <MdxContent section="about" /> */}
-        </div>
+      <section id="introduction" className="max-w-4xl mx-auto w-full px-4 py-12">
+
       </section>
 
       <hr className="mx-auto w-1/2 border-t border-gray-300" />
 
       {/* Manifesto */}
-      <section id="experiences" className="max-w-4xl mx-auto w-full px-4 py-12">
+      <section id="manifesto" className="max-w-4xl mx-auto w-full px-4 py-12">
         <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
           Manifesto
         </h2>
@@ -73,7 +70,7 @@ export default function Home() {
       <hr className="mx-auto w-1/2 border-t border-gray-300" />
 
       {/* Pamphlet */}
-      <section id="places-travelled" className="max-w-4xl mx-auto w-full px-4 py-12">
+      <section id="pamphlet" className="max-w-4xl mx-auto w-full px-4 py-12">
         <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
           Pamphlet
         </h2>
@@ -83,16 +80,23 @@ export default function Home() {
       <hr className="mx-auto w-1/2 border-t border-gray-300" />
 
       {/* Links / Publications */}
-      <section id="publications" className="max-w-4xl mx-auto w-full px-4 py-12">
+      <section id="links" className="max-w-4xl mx-auto w-full px-4 py-12">
         <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
           Links
         </h2>
         {/* <Tabs tabs={publicationTabs} /> */}
       </section>
 
+      {/* Contact */}
+      <section id="contact" className="max-w-4xl mx-auto w-full px-4 py-12">
+        <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
+          Contact
+        </h2>
+        {/* <Tabs tabs={publicationTabs} /> */}
+      </section>
+
       {/* Footer / Contact */}
-      <div id="contact" className="mt-auto">
-        Footer
+      <div className="mt-auto">
         <Footer lang={lang} />
       </div>
     </div>
