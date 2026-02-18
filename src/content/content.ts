@@ -25,8 +25,10 @@ She has also authored over 20 books on gender, sexuality, and Nepala Bhasa in th
     },
     {
       header: "What are her achievements?",
-      body: `• Awards and Recognition: She has received three international recognitions for her transformative human rights work: the BBC 100 Women (2023) list, the TIME 100 Next (2024) list, and Forbes 30 Under 30 (2025).
-• Legal Trailblazer: Her Supreme Court verdict from 2023 became a landmark case in the history of recognition of transgender identity in Nepal.`,
+      body: [
+        "Awards and Recognition: She has received three international recognitions for her transformative human rights work: the BBC 100 Women (2023) list, the TIME 100 Next (2024) list, and Forbes 30 Under 30 (2025).",
+        "Legal Trailblazer: Her Supreme Court verdict from 2023 became a landmark case in the history of recognition of transgender identity in Nepal."
+      ],
       bg: "#f5f5f5",
       text: "black",
     },
@@ -68,8 +70,10 @@ Every Identity Recognized, Every Person Respected: My Campaign for Social Justic
     },
     {
       header: "रुक्शनाका मुख्य उपलब्धिहरू के-के हुन् ?",
-      body: `• सम्मान तथा पुरस्कार: मानव अधिकारको क्षेत्रमा पुर्‍याएको परिवर्तनकारी योगदानको कदरस्वरूप उनले बिबिसी १०० महिला (सन् २०२३), टाइम १०० नेक्स्ट (सन् २०२४) र फोर्ब्स ३० अन्डर ३० (सन् २०२५) जस्ता तीन प्रतिष्ठित अन्तर्राष्ट्रिय सम्मानहरू प्राप्त गरिसकेका छन्।
-• कानूनी कोशेढुङ्गा: नेपालमा पारलैङ्गिक पहिचानको कानूनी मान्यताको इतिहासमा उनको रिट निवेदनमा सर्वोच्च अदालतबाट २०८० सालमा भएको फैसला एक कोशेढुङ्गाका रूपमा स्थापित भएको छ।`,
+      body: [
+        "सम्मान तथा पुरस्कार: मानव अधिकारको क्षेत्रमा पुर्‍याएको परिवर्तनकारी योगदानको कदरस्वरूप उनले बिबिसी १०० महिला (सन् २०२३), टाइम १०० नेक्स्ट (सन् २०२४) र फोर्ब्स ३० अन्डर ३० (सन् २०२५) जस्ता तीन प्रतिष्ठित अन्तर्राष्ट्रिय सम्मानहरू प्राप्त गरिसकेका छन्।",
+        "कानूनी कोशेढुङ्गा: नेपालमा पारलैङ्गिक पहिचानको कानूनी मान्यताको इतिहासमा उनको रिट निवेदनमा सर्वोच्च अदालतबाट २०८० सालमा भएको फैसला एक कोशेढुङ्गाका रूपमा स्थापित भएको छ।"
+      ],
       bg: "#f5f5f5",
       text: "black",
     },
@@ -111,9 +115,10 @@ Every Identity Recognized, Every Person Respected: My Campaign for Social Justic
     },
     {
       header: "रुक्शनाका मुख्य उपलब्धिहरू के-के हुन् ?",
-      body: `• सम्मान तथा पुरस्कार: मानव अधिकारको क्षेत्रमा पुर्‍याएको परिवर्तनकारी योगदानको कदरस्वरूप उनले बिबिसी १०० महिला (सन् २०२३), टाइम १०० नेक्स्ट (सन् २०२४) र फोर्ब्स ३० अन्डर ३० (सन् २०२५) जस्ता तीन प्रतिष्ठित अन्तर्राष्ट्रिय सम्मानहरू प्राप्त गरिसकेका छन्।
-• कानूनी कोशेढुङ्गा: नेपालमा पारलैङ्गिक पहिचानको कानूनी मान्यताको इतिहासमा उनको रिट निवेदनमा सर्वोच्च अदालतबाट २०८० सालमा भएको फैसला एक कोशेढुङ्गाका रूपमा स्थापित भएको छ।`,
-      bg: "#f5f5f5",
+      body: ["सम्मान तथा पुरस्कार: मानव अधिकारको क्षेत्रमा पुर्‍याएको परिवर्तनकारी योगदानको कदरस्वरूप उनले बिबिसी १०० महिला (सन् २०२३), टाइम १०० नेक्स्ट (सन् २०२४) र फोर्ब्स ३० अन्डर ३० (सन् २०२५) जस्ता तीन प्रतिष्ठित अन्तर्राष्ट्रिय सम्मानहरू प्राप्त गरिसकेका छन्।",
+        "कानूनी कोशेढुङ्गा: नेपालमा पारलैङ्गिक पहिचानको कानूनी मान्यताको इतिहासमा उनको रिट निवेदनमा सर्वोच्च अदालतबाट २०८० सालमा भएको फैसला एक कोशेढुङ्गाका रूपमा स्थापित भएको छ।"
+      ],
+        bg: "#f5f5f5",
       text: "black",
     },
     {

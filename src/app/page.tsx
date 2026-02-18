@@ -61,39 +61,71 @@ export default function Home() {
       <hr className="mx-auto w-1/2 border-t border-gray-300" />
 
       {/* Manifesto */}
-      <section id="manifesto" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
-          Manifesto
-        </h2>
-        {/* <Tabs tabs={experienceTabs} /> */}
+      <section id="manifesto" className="w-full bg-[#292f8c] text-[#f5f5fc] py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2
+            className={`${font[lang].headerFont} ${
+              lang === "new" ? "" : "font-bold"
+            } mb-8 text-4xl text-center`}
+          >
+            {lang === "en"
+              ? "Manifesto"
+              : lang === "ne"
+              ? "घोषणा पत्र"
+              : "बचंपौ"
+            }
+          </h2>
+          {/* Add section content here */}
+        </div>
       </section>
-
-      <hr className="mx-auto w-1/2 border-t border-gray-300" />
 
       {/* Pamphlet */}
       <section id="pamphlet" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
-          Pamphlet
-        </h2>
-        {/* <TravelMap /> */}
+        <h2
+            className={`${font[lang].headerFont} ${
+              lang === "new" ? "" : "font-bold"
+            } mb-8 text-4xl text-center text-[#ac221f]`}
+          >
+            {lang === "en"
+              ? "Pamphlet"
+              : lang === "ne"
+              ? "चुनावी चर्चा"
+              : "बचंपौ"
+            }
+          </h2>
       </section>
 
-      <hr className="mx-auto w-1/2 border-t border-gray-300" />
-
       {/* Links / Publications */}
-      <section id="links" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
-          Links
-        </h2>
-        {/* <Tabs tabs={publicationTabs} /> */}
+      <section id="links" className="w-full bg-[#292f8c] text-[#f5f5fc] py-12">
+        <h2
+            className={`${font[lang].headerFont} ${
+              lang === "new" ? "" : "font-bold"
+            } mb-8 text-4xl text-center`}
+          >
+            {lang === "en"
+              ? "Connect With Me On Social Media"
+              : lang === "ne"
+              ? "मेरो सामाजिक सञ्जालका खाताहरूसँग जोडिनुहोस् "
+              : "जि नापं सामाजिक संजालय् स्वानादिसँ"
+            }
+          </h2>
+          {/* Add section content here */}
       </section>
 
       {/* Contact */}
       <section id="contact" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <h2 className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-3xl text-red-700 text-center`}>
-          Contact
-        </h2>
-        {/* <Tabs tabs={publicationTabs} /> */}
+        <h2
+            className={`${font[lang].headerFont} ${
+              lang === "new" ? "" : "font-bold"
+            } mb-8 text-4xl text-center text-[#ac221f]`}
+          >
+            {lang === "en"
+              ? "Contact"
+              : lang === "ne"
+              ? "सम्पर्क"
+              : "𑐳𑑂𑐰𑐵𑐥𑐹"
+            }
+          </h2>
       </section>
 
       {/* Footer / Contact */}
