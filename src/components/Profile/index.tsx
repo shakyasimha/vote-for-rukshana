@@ -37,7 +37,11 @@ const content = {
   },
 };
 
-const NAVBAR_NAME = "Rukshana Kapali";
+const navbarName = {
+  en: { text: "Rukshana Kapali", font: alegreyaSC.className },
+  ne: { text: "रुक्शना कपाली", font: notoSerifDevanagari.className },
+  new: { text: "रुक्शना कपाली", font: nithyaRanjana.className },
+};
 
 const inlayStyle = {
   color: "#f5f5f5",
@@ -72,17 +76,17 @@ export default function Profile({ lang = "new" }: ProfileProps) {
           scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
         }`}
       >
-        <span className={`${alegreyaSC.className} text-white text-lg font-bold tracking-widest`}>
-          {NAVBAR_NAME}
+        <span className={`${navbarName[lang].font} ${lang === "new" ? "font-normal" : "font-bold"} text-white text-lg tracking-widest`}>
+          {navbarName[lang].text}
         </span>
       </div>
 
       {/* ── Profile section ── */}
-      <div className="w-full bg-[#292f8c]">
+      <div className="w-full bg-[#292f8c] mt-16">
         <div className="flex flex-col md:flex-row items-center gap-10 px-8 py-16 w-full max-w-4xl mx-auto">
 
           {/* Profile picture — left */}
-          <div className="relative shrink-0 w-50 h-50 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
+          <div className="relative shrink-0 w-64 h-80 md:w-72 md:h-96 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
             <Image
               src="/rukshana-1-copy.jpg"
               alt="rukshana profile picture"
@@ -109,7 +113,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
               <p
                 key={i}
                 style={inlayStyle}
-                className={`${bodyFont} text-base md:text-lg leading-snug opacity-90`}
+                className={`${bodyFont} ${lang === "new" ? "font-normal" : "font-bold"} text-base md:text-lg leading-snug opacity-90`}
               >
                 {line}
               </p>
@@ -118,7 +122,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
             {/* Slogan — italic */}
             <p
               style={inlayStyle}
-              className={`${bodyFont} text-base md:text-lg italic opacity-80 mt-2`}
+              className={`${bodyFont} ${lang === "new" ? "font-normal" : "font-bold"} text-base md:text-lg italic opacity-80 mt-2`}
             >
               {slogan}
             </p>
