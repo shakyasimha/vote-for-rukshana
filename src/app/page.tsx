@@ -10,7 +10,7 @@ import {
 
 // import enContent from "@/content/en.mdx";
 // import neContent from "@/content/ne.mdx";
-
+// import { content } from "@/content/content";
 import { useLanguage } from "@/lib/languageContext";
 // import { experienceTabs, publicationTabs } from "@/data/tabContent";
 // import { useState } from "react";
@@ -19,6 +19,7 @@ import { useLanguage } from "@/lib/languageContext";
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
+import StaticContent from "@/components/StaticContent";
 // import MdxContent from "@/components/MdxContent";
 
 const font = {
@@ -54,7 +55,7 @@ export default function Home() {
 
       {/* Introduction */}
       <section id="introduction" className="max-w-4xl mx-auto w-full px-4 py-12">
-
+        <StaticContent lang={lang} />
       </section>
 
       <hr className="mx-auto w-1/2 border-t border-gray-300" />
