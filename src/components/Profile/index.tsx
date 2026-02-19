@@ -88,7 +88,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
           {/* Profile picture — left */}
           <div className="relative shrink-0 w-64 h-80 md:w-72 md:h-96 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
             <Image
-              src="/rukshana-1-copy.jpg"
+              src="/rukshana.jpg"
               alt="rukshana profile picture"
               fill
               className="object-cover"
