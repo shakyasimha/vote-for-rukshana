@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  alegreyaSC,
   alegreyaSans,
   nithyaRanjana,
   notoSansDevanagari,
@@ -9,7 +10,8 @@ import {
 } from "@/ui/fonts";
 
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTwitter, FaTiktok, FaGlobe } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaGlobe } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 // import enContent from "@/content/en.mdx";
 // import neContent from "@/content/ne.mdx";
@@ -27,8 +29,8 @@ import StaticContent from "@/components/StaticContent";
 
 const font = {
   en: {
-    headerFont: alegreyaSans.className,
-    bodyFont: roboto.className,
+    headerFont: alegreyaSC.className,
+    bodyFont: alegreyaSans.className,
   },
   ne: {
     headerFont: notoSerifDevanagari.className,
@@ -65,20 +67,28 @@ export default function Home() {
 
       {/* Manifesto */}
       <section id="manifesto" className="w-full bg-[#292f8c] text-[#f5f5fc] py-12">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
           <h2
-            className={`${font[lang].headerFont} ${
-              lang === "new" ? "" : "font-bold"
-            } mb-8 text-4xl text-center`}
+            className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-4 md:mb-0 text-4xl text-center md:text-left`}
           >
             {lang === "en"
-              ? "Manifesto"
+              ? "Click here to read manifesto"
               : lang === "ne"
-              ? "घोषणा पत्र"
-              : "बचंपौ"
-            }
+              ? "प्रतिबद्धता पत्र पढ्न क्लिक गर्नुहोस्"
+              : "𑐖𑐶𑐐𑐹 𑐧𑐔𑑄𑐥𑑁 𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵𑑄 𑐧𑑂𑐰𑐣𑐾𑐟 𑐠𑐣 𑐟𑐶𑐫𑐵𑐡𑐶𑐳𑑃 𑑋"}
           </h2>
-          {/* Add section content here */}
+
+          <Link
+            href="/प्रतिबद्धतापत्र.pdf"
+            target="_blank"
+            className={`${font[lang].bodyFont} bg-[#ac221f] text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-lg md:text-xl text-center`}
+          >
+            {lang === "en"
+              ? "Read ->"
+              : lang === "ne"
+              ? "पढ्नुहोस् ->"
+              : "𑐧𑑂𑐰𑐣𑐵𑐡𑐶𑐳𑑃 ->"}
+          </Link>
         </div>
       </section>
 
@@ -109,7 +119,7 @@ export default function Home() {
               ? "Connect With Me On Social Media"
               : lang === "ne"
               ? "मेरो सामाजिक सञ्जालका खाताहरूसँग जोडिनुहोस् "
-              : "जि नापं सामाजिक संजालय् स्वानादिसँ"
+              : "𑐖𑐶 𑐣𑐵𑐥𑑄 𑐳𑐵𑐩𑐵𑐖𑐶𑐎 𑐳𑑄𑐖𑐵𑐮𑐫𑑂 𑐳𑑂𑐰𑐵𑐣𑐵𑐡𑐶𑐳𑑃"
             }
           </h2>
 
@@ -122,7 +132,7 @@ export default function Home() {
               className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
             >
               <FaFacebookF size={32} />
-              Facebook
+              { lang == "en" ? "Facebook" : lang == "ne" ? "फेसबुक" : "𑐦𑐾𑐳𑐧𑐸𑐎"}
             </Link>
 
             {/* Instagram */}
@@ -132,7 +142,7 @@ export default function Home() {
               className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
             >
               <FaInstagram size={32} />
-              Instagram
+              { lang == "en" ? "Instagram" : lang == "ne" ? "ईन्स्टाग्राम" : "𑐃𑐣𑑂𑐳𑑂𑐚𑐵𑐐𑑂𑐬𑐵𑐩"}
             </Link>
 
             {/* X */}
@@ -141,8 +151,8 @@ export default function Home() {
               target="_blank"
               className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
             >
-              <FaTwitter size={32} />
-              X
+              <FaXTwitter size={32} />
+              { lang == "en" ? "X" : lang == "ne" ? "एक्स्" : "𑐊𑐎𑑂𑐳𑑂"}
             </Link>
 
             {/* TikTok */}
@@ -152,7 +162,7 @@ export default function Home() {
               className="flex flex-col items-center gap-2 text-white hover:underline text-2xl"
             >
               <FaTiktok size={32} />
-              TikTok
+              { lang == "en" ? "TikTok" : lang == "ne" ? "टिकटक" : "𑐚𑐶𑐎𑐚𑐎"}
             </Link>
 
             {/* Personal Website */}
@@ -162,7 +172,7 @@ export default function Home() {
               className="flex flex-col items-center gap-2 text-white hover:underline text-2xl sm:col-span-2"
             >
               <FaGlobe size={32} />
-              Personal Website
+              { lang == "en" ? "Personal Website" : lang == "ne" ? "व्यक्तिगत वेबसाइट" : "𑐠𑑅𑐐𑐸 𑐰𑐾𑐧𑐳𑐵𑐃𑐚"}
             </Link>
           </div>
       </section>
@@ -178,7 +188,7 @@ export default function Home() {
               ? "Contact"
               : lang === "ne"
               ? "सम्पर्क"
-              : "𑐳𑑂𑐰𑐵𑐥𑐹"
+              : "स्वापू"
             }
           </h2>
       </section>
