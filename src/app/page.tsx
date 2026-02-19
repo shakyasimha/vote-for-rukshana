@@ -80,7 +80,7 @@ export default function Home() {
           </h2>
 
           <Link
-            href="/प्रतिबद्धतापत्र.pdf"
+            href="/manifesto-np.pdf"
             target="_blank"
             className={`${font[lang].bodyFont} bg-[#ac221f] text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-lg md:text-xl text-center`}
           >
