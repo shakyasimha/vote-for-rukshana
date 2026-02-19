@@ -7,6 +7,7 @@ import {
   notoSansDevanagari,
   notoSerifDevanagari,
   roboto,
+  newaLipi
 } from "@/ui/fonts";
 
 import Link from "next/link";
@@ -180,17 +181,44 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="max-w-4xl mx-auto w-full px-4 py-12">
         <h2
-            className={`${font[lang].headerFont} ${
-              lang === "new" ? "" : "font-bold"
-            } mb-8 text-4xl text-center text-[#ac221f]`}
-          >
-            {lang === "en"
-              ? "Contact"
-              : lang === "ne"
-              ? "सम्पर्क"
-              : "स्वापू"
-            }
-          </h2>
+          className={`${font[lang].headerFont} ${lang === "new" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}
+        >
+          {lang === "en" ? "Contact" : lang === "ne" ? "सम्पर्क" : "स्वापू"}
+        </h2>
+
+        <div className={`${lang == "ne" ? notoSerifDevanagari.className : lang == "en" ?  alegreyaSans.className : newaLipi.className} flex flex-col md:flex-row md:items-start md:justify-center md:gap-4 text-black`}>
+          {/* Left Section */}
+          <div className="flex-1 text-center md:text-left md:pr-4 flex flex-col justify-start">
+            <p className={`${lang === "new" ? "font-bold" : "font-semibold"} mb-2`}>
+              {lang === "en" ? "Email:" : lang === "ne" ? "ईमेल" : "𑐃𑐩𑐾𑐮"}
+            </p>
+            <p className={`${alegreyaSans.className}`}>rukshanainpolitics@gmail.com</p>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden md:block w-0.5 bg-[#ac221f] mx-4"></div>
+
+          {/* Middle Section */}
+          <div className="flex-1 text-center md:text-left md:px-4 flex flex-col justify-start mt-10 md:mt-0">
+            <p className={`${lang === "new" ? "font-bold" : "font-semibold"} mb-1`}>
+              {lang === "en" ? "Siddhartha Ratna Guvaju" : lang === "ne" ? "सिद्धार्थ रत्न गुभाजु" : "𑐳𑐶𑐡𑑂𑐢𑐵𑐬𑑂𑐠 𑐬𑐟𑑂𑐣 𑐐𑐸𑐨𑐵𑐖𑐸"}
+            </p>
+            <p className="mb-2">{lang === "en" ? "Secretary" : lang === "ne" ? "सचिव" : "𑐳𑐔𑐶𑐰"}</p>
+            <p className={`${alegreyaSans.className} mb-4`}>rukshanasecretariat1@gmail.com</p>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden md:block w-0.5 bg-[#ac221f] mx-4"></div>
+
+          {/* Right Section */}
+          <div className="flex-1 text-center md:text-left md:pl-4 flex flex-col justify-start mt-10 md:mt-0">
+            <p className={`${lang === "new" ? "font-bold" : "font-semibold"} mb-1`}>
+              {lang === "en" ? "Pratiik Thapa" : lang === "ne" ? "प्रतिक थापा" : "𑐥𑑂𑐬𑐟𑐶𑐎 𑐠𑐵𑐥𑐵"}
+            </p>
+            <p className="mb-2">{lang === "en" ? "Secretary" : lang === "ne" ? "सचिव" : "𑐳𑐔𑐶𑐰"}</p>
+            <p className={`${alegreyaSans.className} mb-4`}>rukshanasecretariat2@gmail.com</p>
+          </div>
+        </div>
       </section>
 
       {/* Footer / Contact */}
