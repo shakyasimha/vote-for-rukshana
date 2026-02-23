@@ -194,7 +194,12 @@ export default function Home() {
               {lang === "en" ? "Siddhartha Ratna Guvaju" : lang === "ne" ? "सिद्धार्थ रत्न गुभाजु" : "𑐳𑐶𑐡𑑂𑐢𑐵𑐬𑑂𑐠 𑐬𑐟𑑂𑐣 𑐐𑐸𑐨𑐵𑐖𑐸"}
             </p>
             <p className="mb-2">{lang === "en" ? "Secretary" : lang === "ne" ? "सचिव" : "𑐳𑐔𑐶𑐰"}</p>
-            <p className={`${alegreyaSans.className} mb-4`}>rukshanasecretariat1@gmail.com</p>
+            <Link
+              href="mailto:rukshanasecretariat1@gmail.com"
+              className="items-center gap-2 text-[#f5f5f5]/80 hover:opacity-60 transition duration-300"
+            >
+              rukshanasecretariat1@gmail.com
+            </Link>
           </div>
 
           {/* Divider */}
@@ -203,10 +208,15 @@ export default function Home() {
           {/* Right Section */}
           <div className="flex-1 text-center md:text-center md:pl-4 flex flex-col justify-start mt-10 md:mt-0">
             <p className={`${lang === "new" ? "font-bold" : "font-semibold"} mb-1 text-xl`}>
-              {lang === "en" ? "Pratiik Thapa" : lang === "ne" ? "प्रतिक थापा" : "𑐥𑑂𑐬𑐟𑐶𑐎 𑐠𑐵𑐥𑐵"}
+              {lang === "en" ? "Pratik Thapa" : lang === "ne" ? "प्रतिक थापा" : "𑐥𑑂𑐬𑐟𑐶𑐎 𑐠𑐵𑐥𑐵"}
             </p>
             <p className="mb-2">{lang === "en" ? "Secretary" : lang === "ne" ? "सचिव" : "𑐳𑐔𑐶𑐰"}</p>
-            <p className={`${alegreyaSans.className} mb-4`}>rukshanasecretariat2@gmail.com</p>
+            <Link
+              href="mailto:rukshanasecretariat2@gmail.com"
+              className="items-center gap-2 text-[#f5f5f5]/80 hover:opacity-60 transition duration-300"
+            > 
+              rukshanasecretariat2@gmail.com
+            </Link>
           </div>
         </div>
       </section>
