@@ -1,6 +1,6 @@
 "use client";
 
-import { content } from "@/content/content";
+import { fetchContent } from "@/sanity/lib/fetchContent";
 import {
   alegreyaSans,
   alegreyaSC,
@@ -8,14 +8,19 @@ import {
   notoSerifDevanagari,
 } from "@/ui/fonts";
 
+import { Section, Content } from "@/lib/types";
+
 type Props = {
   lang: "en" | "ne" | "new";
 };
 
-const StaticContent = ({ lang }: Props) => {
+const StaticContent = async ({ lang }: Props) => {
   const isEnglish = lang === "en";
   const headerFont = isEnglish ? alegreyaSC.className : notoSerifDevanagari.className;
   const bodyFont = isEnglish ? alegreyaSans.className : notoSansDevanagari.className;
+
+  const content: Content = await fetchContent();
+
 
   return (
     <>
