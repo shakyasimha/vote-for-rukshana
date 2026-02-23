@@ -16,7 +16,7 @@ export const footerContent = {
     text: "Proportional Representation Candidate for House of Representatives Election, 2026.",
     secretariatHeader: "Campaign Secretariat",
     location: "📍 Yala, Nepal",
-    email: "secretariat@rukshana2026.org",
+    email: "rukshanainpolitics@gmail.com",
     phone: "+977 9808262699",
     footerName: "Rukshana Kapali",
     year: "1146",
@@ -27,7 +27,7 @@ export const footerContent = {
     text: "समानुपातिक उम्मेदवार, प्रतिनिधि सभा निर्वाचन, २०८२",
     secretariatHeader: "अभियान सचिवालय",
     location: "📍 यल, नेपाल",
-    email: "secretariat@rukshana2026.org",
+    email: "rukshanainpolitics@gmail.com",
     phone: "+९७७ ९८०८२६२६९९",
     footerName: "रुक्शना कपाली",
     year: "११४६",
@@ -38,7 +38,7 @@ export const footerContent = {
     text: "𑐳𑐩𑐵𑐣𑐸𑐥𑐵𑐟𑐶𑐎 𑐄𑐩𑑂𑐩𑐾𑐡𑐰𑐵𑐬, 𑐥𑑂𑐬𑐟𑐶𑐣𑐶𑐢𑐶 𑐳𑐨𑐵 𑐣𑐶𑐬𑑂𑐰𑐵𑐔𑐣, 𑑒𑑐𑑘𑑒",
     secretariatHeader: "𑐀𑐨𑐶𑐫𑐵𑐣 𑐳𑐔𑐶𑐰𑐵𑐮𑐫",
     location: "📍 𑐫𑐮, 𑐣𑐾𑐥𑐵𑐮",
-    email: "secretariat@rukshana2026.org",
+    email: "rukshanainpolitics@gmail.com",
     phone: "+𑑙𑑗𑑗 𑑙𑑘𑑐𑑘𑑒𑑖𑑒𑑖𑑙𑑙",
     footerName: "𑐬𑐸𑐎𑑂𑐳𑐣𑐵 𑐎𑐥𑐵𑐮𑐶",
     year: "𑑑𑑑𑑔𑑖",
@@ -72,7 +72,7 @@ export default function Footer({ lang = "new" }: FooterProps) {
   const font = fonts[lang];
 
   return (
-    <footer className="bg-[#292f8c] text-[#f5f5f5] py-16 flex flex-col">
+    <footer className="bg-[#262c7a] text-[#f5f5f5] py-16 flex flex-col">
       
       {/* Top Content (grows to push bottom down) */}
       <div className="flex max-w-4xl mx-auto flex-col md:flex-row w-full items-start px-8 gap-40">
@@ -115,7 +115,7 @@ export default function Footer({ lang = "new" }: FooterProps) {
             <span>📧</span>
             <span>{info.email}</span>
           </Link>
-          <span className="text-[#f5f5f5]/80">📞 {info.phone}</span>
+          {/* <span className="text-[#f5f5f5]/80">📞 {info.phone}</span> */}
         </div>
       </div>
 
