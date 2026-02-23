@@ -1,8 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-
-type Language = "en" | "ne" | "new";
+import type { Language } from "@/ui/languages"
 
 type LanguageContextType = {
   lang: Language;

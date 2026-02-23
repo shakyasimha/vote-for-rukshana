@@ -2,45 +2,22 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { alegreyaSC, nithyaRanjana, notoSerifDevanagari } from "@/ui/fonts";
-
-const content = {
-  en: {
-    name: "Rukshana Kapali",
-    nameFont: alegreyaSC.className,
-    bodyFont: alegreyaSC.className,
-    lines: [
-      "Candidate for House of Representatives Election, 2026.",
-      "Proportional Representation Candidate no. 2, Progressive Democratic Party.",
-    ],
-    slogan: "Vote for Social Justice. Vote for Change.",
-  },
-  ne: {
-    name: "रुक्शना कपाली",
-    nameFont: notoSerifDevanagari.className,
-    bodyFont: notoSerifDevanagari.className,
-    lines: [
-      "प्रतिनिधि सभा निर्वाचन, २०८२ को उम्मेदवार ।",
-      "समानुपातिक उम्मेदवार, क्रम संख्या २, प्रगतिशील लोकतान्त्रिक पार्टी ।",
-    ],
-    slogan: "सामाजिक न्यायका लागि मतदान। परिवर्तनका लागि मतदान।",
-  },
-  new: {
-    name: "रुक्शना कपाली",
-    nameFont: nithyaRanjana.className,
-    bodyFont: notoSerifDevanagari.className,
-    lines: [
-      "𑐥𑑂𑐬𑐟𑐶𑐣𑐶𑐢𑐶 𑐳𑐨𑐵 𑐣𑐶𑐬𑑂𑐰𑐵𑐔𑐣, 𑑒𑑐𑑘𑑒 𑐎𑑀 𑐄𑐩𑑂𑐩𑐾𑐡𑐰𑐵𑐬",
-      "𑐳𑐩𑐵𑐣𑐸𑐥𑐵𑐟𑐶𑐎 𑐄𑐩𑑂𑐩𑐾𑐡𑐰𑐵𑐬, 𑐎𑑂𑐬𑐩 𑐳𑑄𑐏𑑂𑐫𑐵 𑑒, 𑐥𑑂𑐬𑐐𑐟𑐶𑐱𑐷𑐮 𑐮𑑀𑐎𑐟𑐵𑐣𑑂𑐟𑑂𑐬𑐶𑐎 𑐥𑐵𑐬𑑂𑐚𑐷",
-    ],
-    slogan: "सामाजिक न्यायका लागि मतदान। परिवर्तनका लागि मतदान।",
-  },
-};
+import { font } from "@/lib/langFont";
+import type { Language } from "@/ui/languages";
+import { content } from "@/content/content";
 
 const navbarName = {
-  en: { text: "Rukshana Kapali", font: alegreyaSC.className },
-  ne: { text: "रुक्शना कपाली", font: notoSerifDevanagari.className },
-  new: { text: "रुक्शना कपाली", font: nithyaRanjana.className },
+  en: { text: "Rukshana Kapali", font: font.en.headerFont },
+  ne: { text: "रुक्शना कपाली", font: font.ne.headerFont },
+  new: { text: "रुक्शना कपाली", font: font.new.headerFont },
+  tib: { text: "རུཀ་ས་ནཱ་ཀ་པཱ་ལཱི།", font: font.tib.headerFont },
+  tamang: { text: "རུཀ་ས་ནཱ་ཀ་པཱ་ལཱི།", font: font.tamang.headerFont },
+  tamang_devnagari: { text: "रुक्शना कपाली", font: font.tamang_devnagari.headerFont },
+  urdu: { text: "انتخابی پمفلٹ", font: font.urdu.headerFont },
+  maithili: { text: "𑒩𑒳𑒏𑓂𑒬𑒢𑒰 𑒏𑒣𑒰𑒪𑒲", font: font.maithili.headerFont },
+  maithili_devnagari: { text: "रुक्शना कपाली", font: font.maithili_devnagari.headerFont },
+  bangla: { text: "রুকশানা কাপালী", font: font.bangla.headerFont },
+  bhojpuri: { text: "𑂩𑂳𑂍𑂹𑂬𑂢𑂰⸱𑂍𑂣𑂰𑂪𑂲", font: font.bhojpuri.headerFont },
 };
 
 const inlayStyle = {
@@ -50,13 +27,20 @@ const inlayStyle = {
 };
 
 type ProfileProps = {
-  lang?: "en" | "ne" | "new";
+  lang?: Language;
 };
 
 export default function Profile({ lang = "new" }: ProfileProps) {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const [scrolled, setScrolled] = useState(false);
-  const { name, nameFont, bodyFont, lines, slogan } = content[lang];
+
+  // 🔹 Profile data is first element of content array
+  const profileData = content[lang][0];
+
+  const { name, lines, slogan } = profileData;
+
+  const headerFont = font[lang].headerFont;
+  const bodyFont = font[lang].bodyFont;
 
   useEffect(() => {
     const onScroll = () => {
@@ -70,14 +54,18 @@ export default function Profile({ lang = "new" }: ProfileProps) {
 
   return (
     <>
-      {/* ── Name overlay centered in the fixed navbar ── */}
+      {/* ── Name overlay centered in fixed navbar ── */}
       <div
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center pointer-events-none h-16 transition-all duration-500 ${
           scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
         }`}
       >
-        <span className={`${navbarName[lang].font} ${lang === "new" ? "font-normal" : "font-bold"} text-white text-lg tracking-widest`}>
-          {navbarName[lang].text}
+        <span
+          className={`${headerFont} ${
+            lang === "new" ? "font-normal" : "font-bold"
+          } text-white text-lg tracking-widest`}
+        >
+          {name}
         </span>
       </div>
 
@@ -85,7 +73,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
       <div className="w-full bg-[#292f8c] mt-16">
         <div className="flex flex-col md:flex-row items-center gap-10 px-8 py-16 w-full max-w-4xl mx-auto">
 
-          {/* Profile picture — left */}
+          {/* Profile picture */}
           <div className="relative shrink-0 w-64 h-80 md:w-72 md:h-96 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
             <Image
               src="/rukshana.jpg"
@@ -95,13 +83,16 @@ export default function Profile({ lang = "new" }: ProfileProps) {
             />
           </div>
 
-          {/* Text — right */}
+          {/* Text */}
           <div className="flex-1 flex flex-col gap-3 text-center md:text-left">
+
             {/* Name */}
             <h1
               ref={nameRef}
               style={inlayStyle}
-              className={`${nameFont} ${lang === "new" ? "" : "font-bold"} text-4xl md:text-5xl leading-tight transition-opacity duration-500 ${
+              className={`${headerFont} ${
+                lang === "new" ? "" : "font-bold"
+              } text-4xl md:text-5xl leading-tight transition-opacity duration-500 ${
                 scrolled ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -113,16 +104,20 @@ export default function Profile({ lang = "new" }: ProfileProps) {
               <p
                 key={i}
                 style={inlayStyle}
-                className={`${bodyFont} ${lang === "new" ? "font-normal" : "font-bold"} text-base md:text-lg leading-snug opacity-90`}
+                className={`${bodyFont} ${
+                  lang === "new" ? "font-normal" : "font-bold"
+                } text-base md:text-lg leading-snug opacity-90`}
               >
                 {line}
               </p>
             ))}
 
-            {/* Slogan — italic */}
+            {/* Slogan */}
             <p
               style={inlayStyle}
-              className={`${bodyFont} ${lang === "new" ? "font-normal" : "font-bold"} text-base md:text-lg italic opacity-80 mt-2`}
+              className={`${bodyFont} ${
+                lang === "new" ? "font-normal" : "font-bold"
+              } text-base md:text-lg italic opacity-80 mt-2`}
             >
               {slogan}
             </p>

@@ -1,6 +1,14 @@
 import { client } from "./client";
 import type { Content, Section } from "@/lib/types";
 
+const sectionStyles: Record<string, { bg: string; text: string }> = {
+  whois: { bg: "#f5f5f5", text: "black" },
+  background: { bg: "#292f8c", text: "#f5f5fc" },
+  achievements: { bg: "#f5f5f5", text: "black" },
+  vote: { bg: "#292f8c", text: "#f5f5fc" },
+  "why-vote": { bg: "#f5f5f5", text: "black" },
+};
+
 export const fetchContent = async (): Promise<Content> => {
   const languages: (keyof Content)[] = ["en", "ne", "new"];
   const sections = ["whois", "background", "achievements", "vote", "why-vote"];
@@ -27,24 +35,25 @@ export const fetchContent = async (): Promise<Content> => {
         if (!post) return null;
 
         let body: string | string[] = "";
-        if (post.content?.length) {
-          const isNormalParagraphs = post.content.every(
-            (b: any) => b._type === "block" && b.style === "normal"
-          );
-          if (isNormalParagraphs) {
-            body = post.content
-              .map((b: any) => b.children.map((c: any) => c.text).join(""))
-              .join("\n\n");
-          } else {
-            body = post.content; // keep as Portable Text array
-          }
-        }
+        // if (post.content?.length) {
+        //   const isNormalParagraphs = post.content.every(
+        //     (b: any) => b._type === "block" && b.style === "normal"
+        //   );
+        //   if (isNormalParagraphs) {
+        //     body = post.content
+        //       .map((b: any) => b.children.map((c: any) => c.text).join(""))
+        //       .join("\n\n");
+        //   } else {
+        //     body = post.content; // keep as Portable Text array
+        //   }
+        // }
+        body = post.content; // Keep as Portable Text array
 
         return {
           header: post.name,
           body,
-          bg: "#f5f5f5",
-          text: "black",
+          bg: sectionStyles[section].bg,
+          text: sectionStyles[section].text,
         } as Section;
       })
       .filter(Boolean) as Section[];

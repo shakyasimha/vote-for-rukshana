@@ -292,3 +292,113 @@ export const tiroDevanagariSanskrit = localFont({
   ],
   display: "swap",
 });
+
+/* Noto Nastaliq Urdu */
+export const notoNastaliqUrdu = localFont({
+  src: [
+    // Variable font (weight axis)
+    {
+      path: "./../../public/fonts/Noto_Nastaliq_Urdu/NotoNastaliqUrdu-VariableFont_wght.ttf",
+      weight: "100 900", // full variable range
+      style: "normal",
+    },
+    // Regular
+    {
+      path: "./../../public/fonts/Noto_Nastaliq_Urdu/NotoNastaliqUrdu-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    // Bold
+    {
+      path: "./../../public/fonts/Noto_Nastaliq_Urdu/NotoNastaliqUrdu-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    // Italic
+    {
+      path: "./../../public/fonts/Noto_Nastaliq_Urdu/NotoNastaliqUrdu-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    // Bold Italic
+    {
+      path: "./../../public/fonts/Noto_Nastaliq_Urdu/NotoNastaliqUrdu-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+});
+
+/* Jomolhari */
+export const jomolhari = localFont({
+  src: [
+    { 
+      path: "./../../public/fonts/Jomolhari/Jomolhari-Regular.ttf", 
+      weight: "400", 
+      style: "normal" 
+    },
+  ],
+  display: "swap",
+});
+  
+/* Noto Sans Tirhuta */
+export const notoSansTirhuta = localFont({
+  src: [
+    { 
+      path: "./../../public/fonts/Noto_Sans_Tirhuta/NotoSansTirhuta-Regular.ttf", 
+      weight: "400", 
+      style: "normal" 
+    },
+  ],
+  display: "swap",
+});
+
+/* Noto Sans Bengali */
+export const notoSansBengali = localFont({
+  src: [
+    // Variable font with weight and width axes
+    {
+      path: "./../../public/fonts/Noto_Sans_Bengali/NotoSansBengali-VariableFont_wdth,wght.ttf",
+      weight: "100 900", // full variable range
+      style: "normal",
+    },
+    // Regular
+    {
+      path: "./../../public/fonts/Noto_Sans_Bengali/NotoSansBengali-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    // Bold
+    {
+      path: "./../../public/fonts/Noto_Sans_Bengali/NotoSansBengali-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    // Italic
+    {
+      path: "./../../public/fonts/Noto_Sans_Bengali/NotoSansBengali-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    // Bold Italic
+    {
+      path: "./../../public/fonts/Noto_Sans_Bengali/NotoSansBengali-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+});
+
+/* Noto Sans Kaithi */
+export const notoSansKaithi = localFont({
+  src: [
+    { 
+      path: "./../../public/fonts/Noto_Sans_Kaithi/NotoSansKaithi-Regular.ttf", 
+      weight: "400",
+      style: "normal" 
+    },
+  ],
+  display: "swap",
+});

@@ -1,54 +1,20 @@
-"use client";
-
-import {
-  alegreyaSC,
-  alegreyaSans,
-  nithyaRanjana,
-  notoSansDevanagari,
-  notoSerifDevanagari,
-  roboto,
-  newaLipi
-} from "@/ui/fonts";
+"use client"
 
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaTiktok, FaGlobe } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
-// import enContent from "@/content/en.mdx";
-// import neContent from "@/content/ne.mdx";
-// import { content } from "@/content/content";
 import { useLanguage } from "@/lib/languageContext";
-// import { experienceTabs, publicationTabs } from "@/data/tabContent";
-// import { useState } from "react";
+import { font } from "@/lib/langFont";
 
 // // Importing components here
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
 import StaticContent from "@/components/StaticContent";
-// import MdxContent from "@/components/MdxContent";
-
-const font = {
-  en: {
-    headerFont: alegreyaSC.className,
-    bodyFont: alegreyaSans.className,
-  },
-  ne: {
-    headerFont: notoSerifDevanagari.className,
-    bodyFont: notoSansDevanagari.className,
-  },
-  new: {
-    headerFont: nithyaRanjana.className,
-    bodyFont: roboto.className,
-  },
-};
 
 // Main component
 export default function Home() {
   const { lang } = useLanguage();
-  // const [activeSection, setActiveSection] = useState("about");
-  // const source = lang === "en" ? enContent : neContent;
-  // const mdxContent = lang === "en" ? enContent : neContent;
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f7f7f7]">
@@ -93,22 +59,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pamphlet */}
-      {/* <section id="pamphlet" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <h2
-            className={`${font[lang].headerFont} ${
-              lang === "new" ? "" : "font-bold"
-            } mb-8 text-4xl text-center text-[#ac221f]`}
-          >
-            {lang === "en"
-              ? "Pamphlet"
-              : lang === "ne"
-              ? "चुनावी चर्चा"
-              : "बचंपौ"
-            }
-          </h2>
-      </section> */}
-
       {/* Links */}
       <section id="links" className="w-full bg-[#f5f5fc] py-16">
         <h2
@@ -125,7 +75,7 @@ export default function Home() {
           </h2>
 
           {/* Add section content here */}
-          <div className={`${lang == "ne" ? notoSerifDevanagari.className : lang == "en" ?  alegreyaSans.className : newaLipi.className} grid grid-cols-1 sm:grid-cols-2 max-w-xl mx-auto gap-x-12 gap-y-8 mb-8`}>
+          <div className={`${font[lang].headerFont} grid grid-cols-1 sm:grid-cols-2 max-w-xl mx-auto gap-x-12 gap-y-8 mb-8`}>
             {/* Facebook */}
             <Link
               href="https://www.facebook.com/rukshanainpolitics"
@@ -186,7 +136,7 @@ export default function Home() {
           {lang === "en" ? "Contact" : lang === "ne" ? "सम्पर्क" : "स्वापू"}
         </h2>
 
-        <div className={`${lang == "ne" ? notoSerifDevanagari.className : lang == "en" ?  alegreyaSans.className : newaLipi.className} flex flex-col md:flex-row items-center justify-center md:gap-16 text-center text-[#f5f5fc]`}>
+        <div className={`${font[lang].bodyFont} flex flex-col md:flex-row items-center justify-center md:gap-16 text-center text-[#f5f5fc]`}>
 
           {/* Middle Section */}
           <div className="flex-1 text-center md:text-center md:px-4 flex flex-col justify-start mt-10 md:mt-0">
