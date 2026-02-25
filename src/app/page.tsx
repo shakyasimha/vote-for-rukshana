@@ -35,6 +35,7 @@ export default function Home() {
       <hr className="mx-auto w-1/2 border-t border-gray-300" />
 
       {/* Manifesto */}
+      {(lang === "en" || lang === "ne" || lang === "new") && (
       <section id="manifesto" className="w-full bg-[#292f8c] text-[#f5f5fc] py-12">
         <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
           <h2
@@ -60,15 +61,19 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      )}
 
       {/* Pamphlet Section */}
+      {(lang === "en" || lang === "ne" || lang === "new") && (
       <section id="pamphlet" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
         <h2 className={`${font[activeLang].headerFont} ${activeLang === "new" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}>
           {activeLang === "en" ? "Pamphlet" : activeLang === "new" ? "प्रचारपत्र" : "प्रचारपत्र"}
         </h2>
       </section>
+      )}
 
       {/* Links */}
+      {(lang === "en" || lang === "ne" || lang === "new") && (
       <section id="links" className="w-full bg-[#292f8c] py-16">
         <h2
           className={`${font[activeLang].headerFont} ${
@@ -104,14 +109,16 @@ export default function Home() {
           </Link>
 
           <Link href="https://rukshanakapali.com.np/" target="_blank" className="flex flex-col items-center gap-3 text-white hover:scale-105 transition-transform duration-300 text-xl sm:col-span-2">
-            <FaGlobe size={40} color="#4285F4" />
+            <FaGlobe size={40} color="#f5f5fc" />
             {activeLang === "en" ? "Personal Website" : activeLang === "new" ? "𑐠𑑅𑐐𑐸 𑐰𑐾𑐧𑐳𑐵𑐃𑐚" : "व्यक्तिगत वेबसाइट"}
           </Link>
         </div>
       </section>
+      )}
           
       
       {/* Contact Section */}
+      {(lang === "en" || lang === "ne" || lang === "new") && (
       <section id="contact" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
         <h2 className={`${font[activeLang].headerFont} ${activeLang === "new" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}>
           {activeLang === "en" ? "Contact" : activeLang === "new" ? "स्वापू" : "सम्पर्क"}
@@ -141,6 +148,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Footer */}
       <div className="mt-auto">
