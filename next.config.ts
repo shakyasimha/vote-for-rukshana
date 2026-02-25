@@ -1,9 +1,15 @@
-import type { NextConfig } from "next";
+// import type { NextConfig } from "next";
+import buildNextConfig from "@next/mdx";
 
-import createMDX from '@next/mdx'
+const withMDX = buildNextConfig({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  }
+});
 
-const withMDX = createMDX({})
-
+/* @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   typescript: {
