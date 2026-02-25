@@ -302,30 +302,30 @@ export const notoNastaliqUrdu = localFont({
       weight: "100 900", // full variable range
       style: "normal",
     },
-    // Regular
-    {
-      path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    // Bold
-    {
-      path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    // Italic
-    {
-      path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    // Bold Italic
-    {
-      path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-BoldItalic.ttf",
-      weight: "700",
-      style: "italic",
-    },
+    // // Regular
+    // {
+    //   path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-Regular.ttf",
+    //   weight: "400",
+    //   style: "normal",
+    // },
+    // // Bold
+    // {
+    //   path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-Bold.ttf",
+    //   weight: "700",
+    //   style: "normal",
+    // },
+    // // Italic
+    // {
+    //   path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-Italic.ttf",
+    //   weight: "400",
+    //   style: "italic",
+    // },
+    // // Bold Italic
+    // {
+    //   path: "./../../public/fonts/Noto_Nastaliq_Urdu/static/NotoNastaliqUrdu-BoldItalic.ttf",
+    //   weight: "700",
+    //   style: "italic",
+    // },
   ],
   display: "swap",
 });
@@ -363,30 +363,30 @@ export const notoSansBengali = localFont({
       weight: "100 900", // full variable range
       style: "normal",
     },
-    // Regular
-    {
-      path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    // Bold
-    {
-      path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    // Italic
-    {
-      path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    // Bold Italic
-    {
-      path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-BoldItalic.ttf",
-      weight: "700",
-      style: "italic",
-    },
+    // // Regular
+    // {
+    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Regular.ttf",
+    //   weight: "400",
+    //   style: "normal",
+    // },
+    // // Bold
+    // {
+    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Bold.ttf",
+    //   weight: "700",
+    //   style: "normal",
+    // },
+    // // Italic
+    // {
+    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Italic.ttf",
+    //   weight: "400",
+    //   style: "italic",
+    // },
+    // // Bold Italic
+    // {
+    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-BoldItalic.ttf",
+    //   weight: "700",
+    //   style: "italic",
+    // },
   ],
   display: "swap",
 });

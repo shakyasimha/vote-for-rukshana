@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* Introduction */}
       <section id="introduction" className="max-w-4xl mx-auto w-full px-4 py-12">
-        <MdxContent lang={lang} />
+        {/* <MdxContent lang={lang} /> */}
       </section>
 
       <hr className="mx-auto w-1/2 border-t border-gray-300" />

@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { font } from "@/lib/langFont";
 import type { Language } from "@/ui/languages";
-import { parseProfile } from "@/lib/parseProfile";
-import type { ProfileData } from "@/lib/parseProfile";
-// import { content } from "@/content/content";
+import type { ProfileData } from "@/content/profile";
+import { profile } from "@/content/profile";
 
 const inlayStyle = {
   color: "#f5f5f5",
@@ -21,21 +20,16 @@ type ProfileProps = {
 export default function Profile({ lang = "new" }: ProfileProps) {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [profileData, setProfileData] = useState<ProfileData | null>(null);
 
-  const headerFont = font[lang].headerFont;
-  const bodyFont = font[lang].bodyFont;
+  // 🔹 Get profile data for selected language, fallback to "new"
+  const profileData: ProfileData = profile[lang] || profile.new;
 
-  // Fetch profile MDX
-  useEffect(() => {
-    async function loadProfile() {
-      const res = await fetch(`/api/content/${lang}/profile`);
-      const text = await res.text();
-      setProfileData(parseProfile(text));
-    }
-    loadProfile();
-  }, [lang]);
+  const { name, lines, slogan } = profileData;
 
+  const headerFont = font[lang]?.headerFont || font.new.headerFont;
+  const bodyFont = font[lang]?.bodyFont || font.new.bodyFont;
+
+  // Scroll listener for navbar name fade
   useEffect(() => {
     const onScroll = () => {
       if (!nameRef.current) return;
@@ -46,9 +40,6 @@ export default function Profile({ lang = "new" }: ProfileProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!profileData) return null; // or a skeleton/spinner
-
-  const { name, lines, slogan } = profileData;
   return (
     <>
       {/* ── Name overlay centered in fixed navbar ── */}
@@ -69,7 +60,6 @@ export default function Profile({ lang = "new" }: ProfileProps) {
       {/* ── Profile section ── */}
       <div className="w-full bg-[#292f8c] mt-16">
         <div className="flex flex-col md:flex-row items-center gap-10 px-8 py-16 w-full max-w-4xl mx-auto">
-
           {/* Profile picture */}
           <div className="relative shrink-0 w-64 h-80 md:w-72 md:h-96 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl">
             <Image
@@ -82,7 +72,6 @@ export default function Profile({ lang = "new" }: ProfileProps) {
 
           {/* Text */}
           <div className="flex-1 flex flex-col gap-3 text-center md:text-left">
-
             {/* Name */}
             <h1
               ref={nameRef}
@@ -97,7 +86,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
             </h1>
 
             {/* Supporting lines */}
-            {lines.map((line: string, i: number) => (
+            {lines.map((line, i) => (
               <p
                 key={i}
                 style={inlayStyle}
@@ -119,7 +108,6 @@ export default function Profile({ lang = "new" }: ProfileProps) {
               {slogan}
             </p>
           </div>
-
         </div>
       </div>
     </>
