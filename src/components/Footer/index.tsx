@@ -2,43 +2,8 @@ import { font } from "@/lib/langFont";
 import type { Language } from "@/ui/languages";
 
 import Link from "next/link";
+import { footerContent } from "@/content/footer";
 // import { text } from "stream/consumers";
-
-export const footerContent = {
-  en: {
-    name: "Rukshana Kapali",
-    party: "Progressive Democratic Party",
-    text: "Proportional Representation Candidate for House of Representatives Election, 2026.",
-    secretariatHeader: "Campaign Secretariat",
-    location: "📍 Yala, Nepal",
-    email: "rukshanainpolitics@gmail.com",
-    phone: "+977 9808262699",
-    footerName: "Rukshana Kapali",
-    year: "1146",
-  },
-  ne: {
-    name: "रुक्शना कपाली",
-    party: "प्रगतिशील लोकतान्त्रिक पार्टी",
-    text: "समानुपातिक उम्मेदवार, प्रतिनिधि सभा निर्वाचन, २०८२",
-    secretariatHeader: "अभियान सचिवालय",
-    location: "📍 यल, नेपाल",
-    email: "rukshanainpolitics@gmail.com",
-    phone: "+९७७ ९८०८२६२६९९",
-    footerName: "रुक्शना कपाली",
-    year: "११४६",
-  },
-  new: {
-    name: "रुक्शना कपाली",
-    party: "𑐥𑑂𑐬𑐐𑐟𑐶𑐱𑐷𑐮 𑐮𑑀𑐎𑐟𑐵𑐣𑑂𑐟𑑂𑐬𑐶𑐎 𑐥𑐵𑐬𑑂𑐚𑐷",
-    text: "𑐳𑐩𑐵𑐣𑐸𑐥𑐵𑐟𑐶𑐎 𑐄𑐩𑑂𑐩𑐾𑐡𑐰𑐵𑐬, 𑐥𑑂𑐬𑐟𑐶𑐣𑐶𑐢𑐶 𑐳𑐨𑐵 𑐣𑐶𑐬𑑂𑐰𑐵𑐔𑐣, 𑑒𑑐𑑘𑑒",
-    secretariatHeader: "𑐀𑐨𑐶𑐫𑐵𑐣 𑐳𑐔𑐶𑐰𑐵𑐮𑐫",
-    location: "📍 𑐫𑐮, 𑐣𑐾𑐥𑐵𑐮",
-    email: "rukshanainpolitics@gmail.com",
-    phone: "+𑑙𑑗𑑗 𑑙𑑘𑑐𑑘𑑒𑑖𑑒𑑖𑑙𑑙",
-    footerName: "𑐬𑐸𑐎𑑂𑐳𑐣𑐵 𑐎𑐥𑐵𑐮𑐶",
-    year: "𑑑𑑑𑑔𑑖",
-  },
-};
 
 type FooterProps = {
   lang?: Language;
