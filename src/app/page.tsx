@@ -10,8 +10,6 @@ import { font } from "@/lib/langFont";
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
-// import StaticContent from "@/components/StaticContent";
-import MdxContent from "@/components/MdxContent";
 import StaticContent from "@/components/StaticContent";
 
 // Main component
@@ -29,7 +27,6 @@ export default function Home() {
 
       {/* Introduction */}
       <section id="introduction" className="max-w-4xl mx-auto w-full px-4 py-12">
-        {/* <MdxContent lang={lang} /> */}
         <StaticContent lang={lang} />
       </section>
 

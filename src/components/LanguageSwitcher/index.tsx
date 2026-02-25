@@ -3,21 +3,18 @@
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/lib/languageContext";
 
-// type Lang = "en" | "ne" | "new" | "tib";
 type Lang = "en" | "ne" | "new";
 
 const languageLabels: Record<Lang, string> = {
   en: "EN",
   ne: "ने",
   new: "𑐣𑐾",
-  // tib: "བོ",
 };
 
 const languageNames: Record<Lang, string> = {
   en: "English",
   ne: "नेपाली",
   new: "𑐣𑐾𑐰𑐵𑑅",
-  // tib: "བོད་སྐད།",
 };
 
 const languageOrder: Lang[] = ["en", "ne", "new"]

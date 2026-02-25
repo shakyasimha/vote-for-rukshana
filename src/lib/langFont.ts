@@ -13,7 +13,7 @@ import {
   notoSansKaithi,
 } from "@/ui/fonts";
 
-// import { headers } from "next/headers";
+// // import { headers } from "next/headers";
 import type { Language } from "@/ui/languages";
 
 type FontConfig = {
@@ -34,44 +34,44 @@ export const font: Record<Language, FontConfig> = {
     headerFont: nithyaRanjana.className,
     bodyFont: roboto.className,
   },
-  tib: {
-    headerFont: jomolhari.className,
-    bodyFont: jomolhari.className,
-  },
-  sherpa: {
-    headerFont: jomolhari.className,
-    bodyFont: jomolhari.className,
-  },
-  tamang: {
-    headerFont: jomolhari.className,
-    bodyFont: jomolhari.className,
-  },
-  tamang_devnagari: {
-    headerFont: notoSerifDevanagari.className,
-    bodyFont: notoSansDevanagari.className,
-  },
-  urdu: {
-    headerFont: notoNastaliqUrdu.className,
-    bodyFont: notoNastaliqUrdu.className,
-  },
-  maithili: {
-    headerFont: notoSansTirhuta.className,
-    bodyFont: notoSansTirhuta.className,
-  },
-  maithili_devnagari: {
-    headerFont: notoSerifDevanagari.className,
-    bodyFont: notoSansDevanagari.className,
-},
-  bangla: {
-    headerFont: notoSansBengali.className,
-    bodyFont: notoSansBengali.className,
-  },
-  bhojpuri: {
-    headerFont: notoSansKaithi.className,
-    bodyFont: notoSansKaithi.className,
-  },
-  bhojpuri_devnagari: {
-    headerFont: notoSerifDevanagari.className,
-    bodyFont: notoSansDevanagari.className,
-  }
+//   tib: {
+//     headerFont: jomolhari.className,
+//     bodyFont: jomolhari.className,
+//   },
+//   sherpa: {
+//     headerFont: jomolhari.className,
+//     bodyFont: jomolhari.className,
+//   },
+//   tamang: {
+//     headerFont: jomolhari.className,
+//     bodyFont: jomolhari.className,
+//   },
+//   tamang_devnagari: {
+//     headerFont: notoSerifDevanagari.className,
+//     bodyFont: notoSansDevanagari.className,
+//   },
+//   urdu: {
+//     headerFont: notoNastaliqUrdu.className,
+//     bodyFont: notoNastaliqUrdu.className,
+//   },
+//   maithili: {
+//     headerFont: notoSansTirhuta.className,
+//     bodyFont: notoSansTirhuta.className,
+//   },
+//   maithili_devnagari: {
+//     headerFont: notoSerifDevanagari.className,
+//     bodyFont: notoSansDevanagari.className,
+// },
+//   bangla: {
+//     headerFont: notoSansBengali.className,
+//     bodyFont: notoSansBengali.className,
+//   },
+//   bhojpuri: {
+//     headerFont: notoSansKaithi.className,
+//     bodyFont: notoSansKaithi.className,
+//   },
+//   bhojpuri_devnagari: {
+//     headerFont: notoSerifDevanagari.className,
+//     bodyFont: notoSansDevanagari.className,
+//   }
 };
