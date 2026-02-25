@@ -61,12 +61,19 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pamphlet Section */}
+      <section id="pamphlet" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
+        <h2 className={`${font[activeLang].headerFont} ${activeLang === "new" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}>
+          {activeLang === "en" ? "Pamphlet" : activeLang === "new" ? "प्रचारपत्र" : "प्रचारपत्र"}
+        </h2>
+      </section>
+
       {/* Links */}
-      <section id="links" className="w-full bg-[#f5f5fc] py-16">
+      <section id="links" className="w-full bg-[#292f8c] py-16">
         <h2
           className={`${font[activeLang].headerFont} ${
             activeLang === "new" ? "" : "font-bold"
-          } mb-16 text-4xl text-center text-[#ac221f]`}
+          } mb-16 text-4xl text-center text-white`}
         >
           {activeLang === "en"
             ? "Connect With Me On Social Media"
@@ -76,42 +83,43 @@ export default function Home() {
         </h2>
 
         <div className={`${font[activeLang].headerFont} grid grid-cols-1 sm:grid-cols-2 max-w-xl mx-auto gap-x-12 gap-y-8 mb-8`}>
-          <Link href="https://www.facebook.com/rukshanainpolitics" target="_blank" className="flex flex-col items-center gap-3 text-black hover:scale-105 transition-transform duration-300 text-xl">
+          <Link href="https://www.facebook.com/rukshanainpolitics" target="_blank" className="flex flex-col items-center gap-3 text-white hover:scale-105 transition-transform duration-300 text-xl">
             <FaFacebookF size={40} color="#1877F2" />
             {activeLang === "en" ? "Facebook" : activeLang === "new" ? "𑐦𑐾𑐳𑐧𑐸𑐎" : "फेसबुक"}
           </Link>
 
-          <Link href="https://www.instagram.com/rukshanainpolitics" target="_blank" className="flex flex-col items-center gap-3 text-black hover:scale-105 transition-transform duration-300 text-xl">
+          <Link href="https://www.instagram.com/rukshanainpolitics" target="_blank" className="flex flex-col items-center gap-3 text-white hover:scale-105 transition-transform duration-300 text-xl">
             <FaInstagram size={40} color="#E4405F" />
             {activeLang === "en" ? "Instagram" : activeLang === "new" ? "𑐂𑐣𑐳𑑂𑐟𑐵𑐐𑑂𑐬𑐵𑐩" : "ईन्स्टाग्राम"}
           </Link>
 
-          <Link href="https://x.com/RukshanaNPolicy" target="_blank" className="flex flex-col items-center gap-3 text-black hover:scale-105 transition-transform duration-300 text-xl">
+          <Link href="https://x.com/RukshanaNPolicy" target="_blank" className="flex flex-col items-center gap-3 text-white hover:scale-105 transition-transform duration-300 text-xl">
             <FaXTwitter size={40} color="#000000" />
             {activeLang === "en" ? "X" : activeLang === "new" ? "𑐊𑐎𑑂𑐳" : "एक्स्"}
           </Link>
 
-          <Link href="https://www.tiktok.com/@rukshanainpolitics" target="_blank" className="flex flex-col items-center gap-3 text-black hover:scale-105 transition-transform duration-300 text-xl">
+          <Link href="https://www.tiktok.com/@rukshanainpolitics" target="_blank" className="flex flex-col items-center gap-3 text-white hover:scale-105 transition-transform duration-300 text-xl">
             <FaTiktok size={40} color="#000" />
             {activeLang === "en" ? "TikTok" : activeLang === "new" ? "𑐟𑐶𑐎𑐟𑐎" : "टिकटक"}
           </Link>
 
-          <Link href="https://rukshanakapali.com.np/" target="_blank" className="flex flex-col items-center gap-3 text-black hover:scale-105 transition-transform duration-300 text-xl sm:col-span-2">
+          <Link href="https://rukshanakapali.com.np/" target="_blank" className="flex flex-col items-center gap-3 text-white hover:scale-105 transition-transform duration-300 text-xl sm:col-span-2">
             <FaGlobe size={40} color="#4285F4" />
             {activeLang === "en" ? "Personal Website" : activeLang === "new" ? "𑐠𑑅𑐐𑐸 𑐰𑐾𑐧𑐳𑐵𑐃𑐚" : "व्यक्तिगत वेबसाइट"}
           </Link>
         </div>
       </section>
-
+          
+      
       {/* Contact Section */}
-      <section id="contact" className="w-full bg-[#292f8c] mx-auto px-4 py-12">
-        <h2 className={`${font[activeLang].headerFont} ${activeLang === "new" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#f5f5fc]`}>
+      <section id="contact" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
+        <h2 className={`${font[activeLang].headerFont} ${activeLang === "new" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}>
           {activeLang === "en" ? "Contact" : activeLang === "new" ? "स्वापू" : "सम्पर्क"}
         </h2>
 
-        <div className={`${font[activeLang].bodyFont} flex flex-col md:flex-row items-center justify-center md:gap-16 text-center text-[#f5f5fc]`}>
+        <div className={`${font[activeLang].bodyFont} flex flex-col md:flex-row items-center justify-center md:gap-16 text-center text-black`}>
           <div className="flex-1 text-center flex flex-col justify-start mt-10 md:mt-0">
-            <p className={`${activeLang === "new" ? "font-bold" : "font-semibold"} mb-1 text-xl`}>
+            <p className={`${activeLang === "new" ? "font-bold" : "font-semibold"} mb-1 text-xl text-[#ac221f]`}>
               {activeLang === "en" ? "Siddhartha Ratna Guvaju" : activeLang === "new" ? "𑐳𑐶𑐡𑑂𑐢𑐵𑐬𑑂𑐠 𑐬𑐟𑑂𑐣 𑐐𑐸𑐨𑐵𑐖𑐸" : "सिद्धार्थ रत्न गुभाजु"}
             </p>
             <p className="mb-2">{activeLang === "en" ? "Secretary" : activeLang === "new" ? "𑐳𑐔𑐶𑐰" : "सचिव"}</p>
@@ -123,7 +131,7 @@ export default function Home() {
           <div className="hidden md:block w-0.5 bg-[#ac221f] mx-4"></div>
 
           <div className="flex-1 text-center flex flex-col justify-start mt-10 md:mt-0">
-            <p className={`${activeLang === "new" ? "font-bold" : "font-semibold"} mb-1 text-xl`}>
+            <p className={`${activeLang === "new" ? "font-bold" : "font-semibold"} mb-1 text-xl text-[#ac221f]`}>
               {activeLang === "en" ? "Pratik Thapa" : activeLang === "new" ? "𑐥𑑂𑐬𑐟𑐶𑐎 𑐠𑐵𑐥𑐵" : "प्रतिक थापा"}
             </p>
             <p className="mb-2">{activeLang === "en" ? "Secretary" : activeLang === "new" ? "𑐳𑐔𑐶𑐰" : "सचिव"}</p>

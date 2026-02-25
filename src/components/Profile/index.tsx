@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { font } from "@/lib/langFont";
 import type { Language } from "@/ui/languages";
-import type { ProfileData } from "@/content/profile";
+import type { ProfileData } from "@/lib/types";
 import { profile } from "@/content/profile";
 
 const inlayStyle = {
