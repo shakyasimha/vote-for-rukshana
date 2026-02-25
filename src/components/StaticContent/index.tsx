@@ -20,6 +20,7 @@ const StaticContent = ({ lang }: Props) => {
         const isEven = idx % 2 === 0;
         const bgColor = isEven ? "#f5f5f5" : "#292f8c";
         const textColor = isEven ? "black" : "#f5f5fc";
+        const headerColor = isEven ? "#ac221f" : "#f5f5f5";
 
         return (
           <div
@@ -28,7 +29,7 @@ const StaticContent = ({ lang }: Props) => {
             style={{ backgroundColor: bgColor, color: textColor }}
           >
             <div className="max-w-5xl mx-auto">
-              <h2 className={`text-4xl mb-6 ${headerFont}`}>{section.header}</h2>
+              <h2 className={`text-4xl mb-6 ${headerFont} text-[${headerColor}]`}>{section.header}</h2>
 
               {Array.isArray(section.body) ? (
                 <ul className={`list-disc pl-6 text-lg leading-relaxed ${bodyFont}`}>
@@ -42,7 +43,7 @@ const StaticContent = ({ lang }: Props) => {
 
               {/* Optional slogan rendering */}
               {section.slogan && (
-                <p className={`mt-6 text-xl font-bold italic ${bodyFont}`}>
+                <p className={`mt-6 text-xl font-bold italic ${bodyFont} text-[${headerColor}]`}>
                   {section.slogan}
                 </p>
               )}

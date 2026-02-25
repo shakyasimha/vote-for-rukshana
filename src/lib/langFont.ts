@@ -32,7 +32,7 @@ export const font: Record<Language, FontConfig> = {
   },
   new: {
     headerFont: nithyaRanjana.className,
-    bodyFont: newaLipi.className,
+    bodyFont: roboto.className,
   },
   tib: {
     headerFont: jomolhari.className,
