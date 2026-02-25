@@ -13,9 +13,15 @@ import {
   notoSansKaithi,
 } from "@/ui/fonts";
 
-import { headers } from "next/headers";
+// import { headers } from "next/headers";
+import type { Language } from "@/ui/languages";
 
-export const font = {
+type FontConfig = {
+  headerFont: string;
+  bodyFont: string;
+};
+
+export const font: Record<Language, FontConfig> = {
   en: {
     headerFont: alegreyaSC.className,
     bodyFont: alegreyaSans.className,
@@ -63,5 +69,9 @@ export const font = {
   bhojpuri: {
     headerFont: notoSansKaithi.className,
     bodyFont: notoSansKaithi.className,
+  },
+  bhojpuri_devnagari: {
+    headerFont: notoSerifDevanagari.className,
+    bodyFont: notoSansDevanagari.className,
   }
 };

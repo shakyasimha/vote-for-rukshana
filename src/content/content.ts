@@ -2,7 +2,9 @@
 
 // Please only edit the header and body section in this file 
 
-export const content = {
+import type { Content } from "@/lib/types";
+
+export const content: Content = {
   // For English content 
   en: [
     // Content for Profile header

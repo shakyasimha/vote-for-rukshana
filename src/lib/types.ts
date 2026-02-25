@@ -1,12 +1,19 @@
+import type { Language } from "@/ui/languages";
+
+export type ProfileData = {
+  name: string;
+  lines: string[];
+  slogan: string;
+};
+
 export type Section = {
   header: string;
   body: string | string[]; // body can be string or array of strings
-  bg: string;
-  text: string;
+  slogan?: string;
 };
 
+export type ContentLanguage = (ProfileData | Section)[];
+
 export type Content = {
-  en: Section[];
-  ne: Section[];
-  new: Section[];
+  [K in Language]: ContentLanguage;
 };

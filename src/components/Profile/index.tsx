@@ -4,21 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { font } from "@/lib/langFont";
 import type { Language } from "@/ui/languages";
-import { content } from "@/content/content";
-
-const navbarName = {
-  en: { text: "Rukshana Kapali", font: font.en.headerFont },
-  ne: { text: "रुक्शना कपाली", font: font.ne.headerFont },
-  new: { text: "रुक्शना कपाली", font: font.new.headerFont },
-  tib: { text: "རུཀ་ས་ནཱ་ཀ་པཱ་ལཱི།", font: font.tib.headerFont },
-  tamang: { text: "རུཀ་ས་ནཱ་ཀ་པཱ་ལཱི།", font: font.tamang.headerFont },
-  tamang_devnagari: { text: "रुक्शना कपाली", font: font.tamang_devnagari.headerFont },
-  urdu: { text: "انتخابی پمفلٹ", font: font.urdu.headerFont },
-  maithili: { text: "𑒩𑒳𑒏𑓂𑒬𑒢𑒰 𑒏𑒣𑒰𑒪𑒲", font: font.maithili.headerFont },
-  maithili_devnagari: { text: "रुक्शना कपाली", font: font.maithili_devnagari.headerFont },
-  bangla: { text: "রুকশানা কাপালী", font: font.bangla.headerFont },
-  bhojpuri: { text: "𑂩𑂳𑂍𑂹𑂬𑂢𑂰⸱𑂍𑂣𑂰𑂪𑂲", font: font.bhojpuri.headerFont },
-};
+import { parseProfile } from "@/lib/parseProfile";
+import type { ProfileData } from "@/lib/parseProfile";
+// import { content } from "@/content/content";
 
 const inlayStyle = {
   color: "#f5f5f5",
@@ -33,14 +21,20 @@ type ProfileProps = {
 export default function Profile({ lang = "new" }: ProfileProps) {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const [scrolled, setScrolled] = useState(false);
-
-  // 🔹 Profile data is first element of content array
-  const profileData = content[lang][0];
-
-  const { name, lines, slogan } = profileData;
+  const [profileData, setProfileData] = useState<ProfileData | null>(null);
 
   const headerFont = font[lang].headerFont;
   const bodyFont = font[lang].bodyFont;
+
+  // Fetch profile MDX
+  useEffect(() => {
+    async function loadProfile() {
+      const res = await fetch(`/api/content/${lang}/profile`);
+      const text = await res.text();
+      setProfileData(parseProfile(text));
+    }
+    loadProfile();
+  }, [lang]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -52,6 +46,9 @@ export default function Profile({ lang = "new" }: ProfileProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  if (!profileData) return null; // or a skeleton/spinner
+
+  const { name, lines, slogan } = profileData;
   return (
     <>
       {/* ── Name overlay centered in fixed navbar ── */}
@@ -100,7 +97,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
             </h1>
 
             {/* Supporting lines */}
-            {lines.map((line, i) => (
+            {lines.map((line: string, i: number) => (
               <p
                 key={i}
                 style={inlayStyle}
