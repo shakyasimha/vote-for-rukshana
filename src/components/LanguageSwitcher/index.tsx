@@ -14,7 +14,7 @@ const languageLabels: Record<Lang, string> = {
 const languageNames: Record<Lang, string> = {
   en: "English",
   ne: "नेपाली",
-  new: "𑐣𑐾𑐰𑐵𑑅",
+  new: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵",
 };
 
 const languageOrder: Lang[] = ["en", "ne", "new"]
