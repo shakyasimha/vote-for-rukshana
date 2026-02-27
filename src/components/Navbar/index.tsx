@@ -10,6 +10,7 @@ import { useLanguage } from "@/lib/languageContext";
 const navItems = [
   { label: { en: "Introduction", ne: "परिचय", nb: "𑐩𑑂𑐴𑐳𑐶𑐂𑐎𑐵" }, href: "introduction" },
   { label: { en: "Manifesto", ne: "प्रतिबद्धता पत्र", nb: "𑐧𑐔𑑄𑐥𑑁" }, href: "manifesto" },
+  { label: { en: "Pamphlet", ne: "प्रचारपत्र", nb: "𑐧𑐔𑑄𑐥𑑁" }, href: "pamphlet" },
   { label: { en: "Links", ne: "सामाजिक सञ्जाल", nb: "𑐳𑐵𑐩𑐵𑐖𑐶𑐎 𑐳𑑄𑐖𑐵𑐮" }, href: "links" },
   { label: { en: "Contact Me", ne: "सम्पर्क", nb: "𑐳𑑂𑐰𑐵𑐥𑐹" }, href: "contact" },
 ];
