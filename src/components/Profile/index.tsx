@@ -1,3 +1,5 @@
+// Profile component
+ 
 "use client";
 
 import Image from "next/image";
@@ -17,17 +19,18 @@ type ProfileProps = {
   lang?: Language;
 };
 
-export default function Profile({ lang = "new" }: ProfileProps) {
+export default function Profile({ lang = "nb" }: ProfileProps) {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const [scrolled, setScrolled] = useState(false);
+  const effectiveLanguage = (['en', 'ne', 'nb', 'tib'].includes(lang) ? lang : 'ne') as 'en' | 'ne' | 'nb' | 'tib';
 
-  // 🔹 Get profile data for selected language, fallback to "new"
-  const profileData: ProfileData = profile[lang] || profile.new;
+  // 🔹 Get profile data for selected language, fallback to "nb"
+  const profileData: ProfileData = profile[effectiveLanguage] || profile.nb;
 
   const { name, lines, slogan } = profileData;
 
-  const headerFont = font[lang]?.headerFont || font.new.headerFont;
-  const bodyFont = font[lang]?.bodyFont || font.new.bodyFont;
+  const headerFont = font[effectiveLanguage]?.headerFont || font.nb.headerFont;
+  const bodyFont = font[effectiveLanguage]?.bodyFont || font.nb.bodyFont;
 
   // Scroll listener for navbar name fade
   useEffect(() => {
@@ -50,7 +53,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
       >
         <span
           className={`${headerFont} ${
-            lang === "new" ? "font-normal" : "font-bold"
+            lang === "nb" ? "font-normal" : "font-bold"
           } text-white text-lg tracking-widest`}
         >
           {name}
@@ -77,7 +80,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
               ref={nameRef}
               style={inlayStyle}
               className={`${headerFont} ${
-                lang === "new" ? "" : "font-bold"
+                lang === "nb" ? "" : "font-bold"
               } text-4xl md:text-5xl leading-tight transition-opacity duration-500 ${
                 scrolled ? "opacity-0" : "opacity-100"
               }`}
@@ -91,7 +94,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
                 key={i}
                 style={inlayStyle}
                 className={`${bodyFont} ${
-                  lang === "new" ? "font-normal" : "font-bold"
+                  lang === "nb" ? "font-normal" : "font-bold"
                 } text-base md:text-lg leading-snug opacity-90`}
               >
                 {line}
@@ -102,7 +105,7 @@ export default function Profile({ lang = "new" }: ProfileProps) {
             <p
               style={inlayStyle}
               className={`${bodyFont} ${
-                lang === "new" ? "font-normal" : "font-bold"
+                lang === "nb" ? "font-normal" : "font-bold"
               } text-base md:text-lg italic opacity-80 mt-2`}
             >
               {slogan}

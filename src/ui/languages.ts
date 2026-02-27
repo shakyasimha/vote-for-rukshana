@@ -1,10 +1,11 @@
 // The languages used in the main content of the website
 
 export const languages = [
-  "en",
   "ne",
-  "new",
-  // "tib",
+  "en",
+  "nb", // Nepal Bhasa
+  "nbd", // Dolakha dialect of Nepal Bhasa
+  "tib",
   // "sherpa",
   // "tamang",
   // "tamang_devnagari",

@@ -30,14 +30,18 @@ export const font: Record<Language, FontConfig> = {
     headerFont: notoSerifDevanagari.className,
     bodyFont: notoSansDevanagari.className,
   },
-  new: {
+  nb: {
     headerFont: nithyaRanjana.className,
     bodyFont: roboto.className,
   },
-//   tib: {
-//     headerFont: jomolhari.className,
-//     bodyFont: jomolhari.className,
-//   },
+  nbd: {
+    headerFont: notoSerifDevanagari.className,
+    bodyFont: notoSansDevanagari.className,
+  },
+  tib: {
+    headerFont: jomolhari.className,
+    bodyFont: jomolhari.className,
+  },
 //   sherpa: {
 //     headerFont: jomolhari.className,
 //     bodyFont: jomolhari.className,

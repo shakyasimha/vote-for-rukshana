@@ -1,3 +1,5 @@
+// Navbar component
+
 "use client";
 
 import { useState } from "react";
@@ -6,15 +8,16 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import { useLanguage } from "@/lib/languageContext";
 
 const navItems = [
-  { label: { en: "Introduction", ne: "परिचय", new: "𑐩𑑂𑐴𑐳𑐶𑐂𑐎𑐵" }, href: "introduction" },
-  { label: { en: "Manifesto", ne: "प्रतिबद्धता पत्र", new: "𑐧𑐔𑑄𑐥𑑁" }, href: "manifesto" },
-  { label: { en: "Links", ne: "सामाजिक सञ्जाल", new: "𑐳𑐵𑐩𑐵𑐖𑐶𑐎 𑐳𑑄𑐖𑐵𑐮" }, href: "links" },
-  { label: { en: "Contact Me", ne: "सम्पर्क", new: "𑐳𑑂𑐰𑐵𑐥𑐹" }, href: "contact" },
+  { label: { en: "Introduction", ne: "परिचय", nb: "𑐩𑑂𑐴𑐳𑐶𑐂𑐎𑐵" }, href: "introduction" },
+  { label: { en: "Manifesto", ne: "प्रतिबद्धता पत्र", nb: "𑐧𑐔𑑄𑐥𑑁" }, href: "manifesto" },
+  { label: { en: "Links", ne: "सामाजिक सञ्जाल", nb: "𑐳𑐵𑐩𑐵𑐖𑐶𑐎 𑐳𑑄𑐖𑐵𑐮" }, href: "links" },
+  { label: { en: "Contact Me", ne: "सम्पर्क", nb: "𑐳𑑂𑐰𑐵𑐥𑐹" }, href: "contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { lang } = useLanguage();
+  const effectiveLang = (['en', 'ne', 'nb'].includes(lang) ? lang : 'ne') as 'en' | 'ne' | 'nb';
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -42,7 +45,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link href={`#${item.href}`} onClick={(e) => handleNavClick(e, item.href)} className={linkClass}>
-                  {item.label[lang]}
+                  {item.label[effectiveLang]}
                 </Link>
               </li>
             ))}
@@ -89,7 +92,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <li key={item.href}>
               <Link href={`#${item.href}`} onClick={(e) => handleNavClick(e, item.href)} className={mobileLinkClass}>
-                {item.label[lang]}
+                {item.label[effectiveLang]}
               </Link>
             </li>
           ))}

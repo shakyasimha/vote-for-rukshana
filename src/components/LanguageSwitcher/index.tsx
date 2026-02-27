@@ -3,22 +3,26 @@
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/lib/languageContext";
 
-type Lang = "en" | "ne" | "new";
+type Lang = "ne" | "en" | "nb" | "nbd" | "tib";
 
 const languageLabels: Record<Lang, string> = {
-  en: "EN",
   ne: "ने",
-  new: "𑐣𑐾",
+  en: "EN",
+  nb: "𑐣𑐾",
+  nbd: "दोलखा",
+  tib: "བོ",
 };
 
 const languageNames: Record<Lang, string> = {
-  en: "English",
   ne: "नेपाली",
-  new: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵",
+  en: "English",
+  nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵",
+  nbd: "दोलखा नेपालभाषा",
+  tib: "བོད་ཡིག",
 };
 
-const languageOrder: Lang[] = ["en", "ne", "new"]
-// const languageOrder: Lang[] = ["en", "ne", "new", "tib"];
+const languageOrder: Lang[] = ["ne", "en", "nb", "tib"];
+// const languageOrder: Lang[] = ["en", "ne", "nb", "tib"];
 
 export default function LanguageSwitcher() {
   const { lang, setLang } = useLanguage();
