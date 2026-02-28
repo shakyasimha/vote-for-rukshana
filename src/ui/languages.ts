@@ -12,9 +12,9 @@ export const languages = [
   // "urdu",
   // "maithili",
   // "maithili_devnagari",
-  // "bangla",
-  // "bhojpuri",
-  // "bhojpuri_devnagari",
+  "bangla",
+  "bhojpuri",
+  "bhojpuri_devnagari",
 ] as const;
 
 export type Language = (typeof languages)[number];
