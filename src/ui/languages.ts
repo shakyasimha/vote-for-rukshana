@@ -41,6 +41,7 @@ export const languages = [
   "mgrkham",
   "sonaha",
   "tajpuriya",
+  "dumi",
 ] as const;
 
 export type Language = (typeof languages)[number];

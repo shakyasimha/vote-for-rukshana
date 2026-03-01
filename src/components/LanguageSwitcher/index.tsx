@@ -12,7 +12,8 @@ const languageLabels: Record<Language, string> = {
   bajhangi: "बझा", bajjika: "बज्जि", bantawa: "बाम", chamling: "चाम",
   chhantyal: "छन्त्या", chhepang: "छे", dadeldhuri: "डडे", doteli: "डो",
   dungmali: "डुं", haryanvi: "हर", jirel: "जि", kumal: "कु", lhomi: "ल्हो",
-  lohorong: "लोहो", "mgrkham": "खाम", sonaha: "सो", tajpuriya: "ताज"
+  lohorong: "लोहो", "mgrkham": "खाम", sonaha: "सो", tajpuriya: "ताज",
+  dumi: "दु",
 };
 
 const languageNames: Record<Language, string> = {
@@ -25,7 +26,8 @@ const languageNames: Record<Language, string> = {
   chamling: "चाम्लिङ",  chhantyal: "छन्त्याल", chhepang: "चेपाङ",
   dadeldhuri: "डडेल्धुरी", doteli: "डोटेली", dungmali: "डुङ्माली",
   haryanvi: "हरियाणवी", jirel: "जिरेल", kumal: "कुमाल", lhomi: "ल्होमी",
-  lohorong: "लोहोरुङ", "mgrkham": "मगर खाम", sonaha: "सोनाहा", tajpuriya: "ताजपुरिया"
+  lohorong: "लोहोरुङ", "mgrkham": "मगर खाम", sonaha: "सोनाहा", tajpuriya: "ताजपुरिया", 
+  dumi: "दुमी",
 };
 
 // 2. Define your specific display order here
