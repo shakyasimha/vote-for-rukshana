@@ -1,51 +1,16 @@
 import { font } from "@/lib/langFont";
 import type { Language } from "@/ui/languages";
+import { footerContent } from "./footer";
 
 import Link from "next/link";
-
-export const footerContent = {
-  en: {
-    name: "Rukshana Kapali",
-    party: "Progressive Democratic Party",
-    text: "Proportional Representation Candidate for House of Representatives Election, 2026.",
-    secretariatHeader: "Campaign Secretariat",
-    location: "📍 Yala, Nepal",
-    email: "rukshanainpolitics@gmail.com",
-    phone: "+977 9808262699",
-    footerName: "Rukshana Kapali",
-    year: "1146",
-  },
-  ne: {
-    name: "रुक्शना कपाली",
-    party: "प्रगतिशील लोकतान्त्रिक पार्टी",
-    text: "समानुपातिक उम्मेदवार, प्रतिनिधि सभा निर्वाचन, २०८२",
-    secretariatHeader: "अभियान सचिवालय",
-    location: "📍 यल, नेपाल",
-    email: "rukshanainpolitics@gmail.com",
-    phone: "+९७७ ९८०८२६२६९९",
-    footerName: "रुक्शना कपाली",
-    year: "११४६",
-  },
-  nb: {
-    name: "रुक्शना कपालि",
-    party: "𑐥𑑂𑐬𑐐𑐟𑐶𑐳𑐶𑐮 𑐮𑑀𑐎𑐟𑐵𑑄𑐟𑑂𑐬𑐶𑐎 𑐥𑐵𑐬𑑂𑐟𑐶",
-    text: "𑐳𑐩𑐵𑐣𑐸𑐥𑐵𑐟𑐶𑐎 𑐄𑐩𑑂𑐩𑐾𑐡𑐰𑐵𑐬, 𑐥𑑂𑐬𑐟𑐶𑐣𑐶𑐢𑐶 𑐳𑐨𑐵 𑐟𑑅𑐮𑑂𑐫𑐖𑑂𑐫𑐵, 𑑑𑑑𑑔𑑖",
-    secretariatHeader: "𑐖𑑂𑐫𑐵𑐳𑐣𑐵 𑐕𑑂𑐫𑐵𑐘𑑂𑐖𑐾𑐎𑐸𑐠𑐶",
-    location: "📍 𑐫𑐮, 𑐣𑐾𑐥𑐵𑐮",
-    email: "rukshanainpolitics@gmail.com",
-    phone: "+𑑙𑑗𑑗 𑑙𑑘𑑐𑑘𑑒𑑖𑑒𑑖𑑙𑑙",
-    footerName: "𑐬𑐸𑐎𑑂𑐳𑐣𑐵 𑐎𑐥𑐵𑐮𑐶",
-    year: "𑑑𑑑𑑔𑑖",
-  },
-};
 
 type FooterProps = {
   lang?: Language;
 };
 
-export default function Footer({ lang = "ne" }: FooterProps) {
+export default function Footer({ lang = "en" }: FooterProps) {
   // Logic to check if the language exists in footerContent, otherwise default to 'ne'
-  const effectiveLanguage = (['en', 'ne', 'nb'].includes(lang) ? lang : 'ne') as 'en' | 'ne' | 'nb';
+  const effectiveLanguage = (['en', 'ne', 'nb'].includes(lang) ? lang : 'en') as 'en' | 'ne' | 'nb';
   const info = footerContent[effectiveLanguage as keyof typeof footerContent];
 
   return (

@@ -2,40 +2,45 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useParams, useRouter, usePathname } from "next/navigation";
-import { type Language } from "@/ui/languages";
+// 1. Rename the import to avoid the conflict
+import { type Language, languages as allLanguages } from "@/ui/languages";
 
-type Lang = "ne" | "en" | "nb" | "nbd" | "tib";
-
-const languageLabels: Record<Lang, string> = {
-  ne: "ने",
-  en: "EN",
-  nb: "𑐣𑐾",
-  nbd: "दोलखा",
-  tib: "བོ",
+const languageLabels: Record<Language, string> = {
+  ne: "ने", en: "EN", nb: "𑐣𑐾", nbd: "दो", bo: "བོ", hi: "हि", bn: "बं", ur: "اردو",
+  bhj: "भो", bhjd: "भो", mai: "मै", maid: "मै", xsr: "शे", tmg: "ता", tmgd: "ता",
+  acchami: "अछा", angika: "अं", awadhi: "अव", bahing: "बा", baitadeli: "बै",
+  bajhangi: "बझा", bajjika: "बज्जि", bantawa: "बाम", chamling: "चाम",
+  chhantyal: "छन्त्या", chhepang: "छे", dadeldhuri: "डडे", doteli: "डो",
+  dungmali: "डुं", haryanvi: "हर", jirel: "जि", kumal: "कु", lhomi: "ल्हो",
+  lohorong: "लोहो", "mgrkham": "खाम", sonaha: "सो", tajpuriya: "ताज"
 };
 
-const languageNames: Record<Lang, string> = {
-  ne: "नेपाली",
-  en: "English",
-  nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵",
-  nbd: "दोलखा नेपालभाषा",
-  tib: "བོད་ཡིག",
+const languageNames: Record<Language, string> = {
+  ne: "नेपाली", en: "English", nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵", nbd: "दोलखा नेपालभाषा",
+  bo: "བོད་ཡིག", hi: "हिन्दी", bn: "বাংলা", ur: "اردو",
+  bhj: "भोजपुरी (कैथी)", bhjd: "भोजपुरी", mai: "मैथिली (तिरहुता)", maid: "मैथिली",
+  xsr: "Sherpa (བོད་ཡིག)", tmg: "Tamang (བོད་ཡइག)", tmgd: "तामाङ",
+  acchami: "अछामी", angika: "अङ्गिका", awadhi: "अवधी", bahing: "बाहिङ",
+  baitadeli: "बैतडेली", bajhangi: "बझाङ्गी", bajjika: "बज्जिका", bantawa: "बान्तावा",
+  chamling: "चाम्लिङ",  chhantyal: "छन्त्याल", chhepang: "चेपाङ",
+  dadeldhuri: "डडेल्धुरी", doteli: "डोटेली", dungmali: "डुङ्माली",
+  haryanvi: "हरियाणवी", jirel: "जिरेल", kumal: "कुमाल", lhomi: "ल्होमी",
+  lohorong: "लोहोरुङ", "mgrkham": "मगर खाम", sonaha: "सोनाहा", tajpuriya: "ताजपुरिया"
 };
 
-const languageOrder: Lang[] = ["ne", "en", "nb", "tib"];
+// 2. Define your specific display order here
+const displayOrder:readonly Language[] = allLanguages;
 
 export default function LanguageSwitcher() {
   const params = useParams();
   const router = useRouter();
   const pathname = usePathname();
   
-  // Get current lang from URL params, fallback to 'ne'
-  const currentLang = (params.lang as Lang) || "ne";
+  const currentLang = (params.lang as Language) || "ne";
   
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -46,9 +51,7 @@ export default function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  const handleLanguageChange = (newLang: Lang) => {
-    // 1. Get the current path (e.g., /en/about)
-    // 2. Replace the first segment (the lang) with the newLang
+  const handleLanguageChange = (newLang: Language) => {
     const segments = pathname.split("/");
     segments[1] = newLang; 
     const newPath = segments.join("/");
@@ -77,11 +80,12 @@ export default function LanguageSwitcher() {
       </button>
 
       {open && (
+        /* 3. Added max-h-80 and overflow-y-auto for scrollability */
         <ul
-          className="absolute right-0 mt-1 w-44 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden z-50"
+          className="absolute right-0 mt-1 w-56 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden z-50 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300"
           role="listbox"
         >
-          {languageOrder.map((l) => (
+          {displayOrder.map((l) => (
             <li key={l}>
               <button
                 className={`w-full text-left px-4 py-3 text-sm flex items-center justify-between transition-colors duration-150 ${
@@ -91,8 +95,8 @@ export default function LanguageSwitcher() {
                 }`}
                 onClick={() => handleLanguageChange(l)}
               >
-                <span>{languageNames[l]}</span>
-                <span className="text-xs text-gray-400 font-mono">{languageLabels[l]}</span>
+                <span>{languageNames[l] || l}</span>
+                <span className="text-xs text-gray-400 font-mono ml-2">{languageLabels[l] || ""}</span>
               </button>
             </li>
           ))}

@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { font } from "@/lib/langFont";
 import type { Language } from "@/ui/languages";
 import type { ProfileData } from "@/lib/types";
-import { profile } from "@/content/profile";
+import { profile } from "./profile";
 
 const inlayStyle = {
   color: "#f5f5f5",
