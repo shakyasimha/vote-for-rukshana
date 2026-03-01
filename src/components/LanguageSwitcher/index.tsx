@@ -7,7 +7,7 @@ import { type Language, languages as allLanguages } from "@/ui/languages";
 
 const languageLabels: Record<Language, string> = {
   ne: "ने", en: "EN", nb: "𑐣𑐾", nbd: "दो", bo: "བོ", hi: "हि", bn: "बं", ur: "اردو",
-  bhj: "भो", bhjd: "भो", mai: "मै", maid: "मै", xsr: "शे", tmg: "ता", tmgd: "ता",
+  bhj: "𑂦𑂷", bhjd: "भो", mai: "𑒧𑒻", maid: "मै", xsr: "शे", tmg: "ता", tmgd: "ता",
   acchami: "अछा", angika: "अं", awadhi: "अव", bahing: "बा", baitadeli: "बै",
   bajhangi: "बझा", bajjika: "बज्जि", bantawa: "बाम", chamling: "चाम",
   chhantyal: "छन्त्या", chhepang: "छे", dadeldhuri: "डडे", doteli: "डो",
