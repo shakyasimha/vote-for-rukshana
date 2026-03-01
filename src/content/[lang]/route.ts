@@ -2,12 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import fs from "fs/promises";
 import type { Language } from "@/ui/languages";
+import { languages } from "@/ui/languages";
 
-const allowedLangs: Language[] = [
-  "en", "ne", "new", "tib", "sherpa", "tamang",
-  "tamang_devnagari", "urdu", "maithili", "maithili_devnagari",
-  "bangla", "bhojpuri", "bhojpuri_devnagari"
-];
+const allowedLangs:readonly Language[] = languages;
 
 export async function GET(
   _req: NextRequest,

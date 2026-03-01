@@ -5,6 +5,7 @@ export const languages = [
   "en",
   "nb",       // Nepal Bhasa
   "nbd",      // Dolakha dialect of Nepal Bhasa
+  "nsl",      // Nepali Sign Language
   "bo",       // Tibetan
   "hi",       // Hindi
   "bn",       // Bengali

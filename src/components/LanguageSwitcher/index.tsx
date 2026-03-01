@@ -6,7 +6,7 @@ import { useParams, useRouter, usePathname } from "next/navigation";
 import { type Language, languages as allLanguages } from "@/ui/languages";
 
 const languageLabels: Record<Language, string> = {
-  ne: "ने", en: "EN", nb: "𑐣𑐾", nbd: "दो", bo: "བོ", hi: "हि", bn: "बं", ur: "اردو",
+  ne: "ने", en: "EN", nb: "𑐣𑐾", nbd: "दो", nsl: "ने", bo: "བོ", hi: "हि", bn: "बं", ur: "اردو",
   bhj: "𑂦𑂷", bhjd: "भो", mai: "𑒧𑒻", maid: "मै", xsr: "शे", tmg: "ता", tmgd: "ता",
   acchami: "अछा", angika: "अं", awadhi: "अव", bahing: "बा", baitadeli: "बै",
   bajhangi: "बझा", bajjika: "बज्जि", bantawa: "बाम", chamling: "चाम",
@@ -16,7 +16,7 @@ const languageLabels: Record<Language, string> = {
 };
 
 const languageNames: Record<Language, string> = {
-  ne: "नेपाली", en: "English", nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵", nbd: "दोलखा नेपालभाषा",
+  ne: "नेपाली", en: "English", nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵", nbd: "दोलखा नेपालभाषा", nsl: "नेपाली सांकेतिक",
   bo: "བོད་ཡིག", hi: "हिन्दी", bn: "বাংলা", ur: "اردو",
   bhj: "𑂦𑂷𑂔𑂣𑂳𑂩𑂲", bhjd: "भोजपुरी", mai: "𑒧𑒻𑒟𑒱𑒪𑒲", maid: "मैथिली",
   xsr: "Sherpa (བོད་ཡིག)", tmg: "Tamang (བོད་ཡइག)", tmgd: "तामाङ",
@@ -52,7 +52,16 @@ export default function LanguageSwitcher() {
   }, []);
 
   const handleLanguageChange = (newLang: Language) => {
+    // If Nepali Sign language, route to another page
+    if (newLang === "nsl") {
+      router.push("/nsl");
+      setOpen(false);
+      return;
+    }
+
+    // Old logic
     const segments = pathname.split("/");
+
     segments[1] = newLang; 
     const newPath = segments.join("/");
 
