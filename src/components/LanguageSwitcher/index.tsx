@@ -18,7 +18,7 @@ const languageLabels: Record<Language, string> = {
 
 const languageNames: Record<Language, string> = {
   ne: "नेपाली", en: "English", nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵", nbd: "दोलखा नेपालभाषा", nsl: "सांकेतिक भाषा",
-  bo: "བོད་ཡིག", hi: "हिन्दी", bn: "বাংলা", ur: "اردو",
+  bo: "བོད་ཡིག", hi: "हिंदी", bn: "বাংলা", ur: "اردو",
   bhj: "𑂦𑂷𑂔𑂣𑂳𑂩𑂲", bhjd: "भोजपुरी", mai: "𑒧𑒻𑒟𑒱𑒪𑒲", maid: "मैथिली",
   xsr: "ཤར་བའི་གཏམ", tmg: "ཏ་མང་།", tmgd: "तामाङ",
   acchami: "अछामी", angika: "अङ्गिका", awadhi: "अवधी", bahing: "बाहिङ",
