@@ -14,7 +14,7 @@ export default function Footer({ lang = "en" }: FooterProps) {
   const info = footerContent[effectiveLanguage as keyof typeof footerContent];
 
   return (
-    <footer className="bg-[#262c7a] text-[#f5f5f5] py-16 flex flex-col">
+    <footer className="bg-[#262c7a] text-[#f5f5f5] pt-16 pb-4 flex flex-col">
       
       <div className="flex max-w-4xl mx-auto flex-col md:flex-row w-full items-start px-8 gap-40">
         
@@ -60,7 +60,7 @@ export default function Footer({ lang = "en" }: FooterProps) {
       </div>
 
       {/* Divider + Bottom text */}
-      <div className="mt-24 mb-[-48]">
+      <div className="mt-32">
         <div className="mx-auto w-3/4 h-px bg-white/20"></div>
         <div className={`${font[effectiveLanguage as keyof typeof font].bodyFont} text-center text-sm mt-4 text-[#f5f5f5]/50`}>
           &copy; {effectiveLanguage == "nb" ? "𑐣𑐾.𑐳𑑄." : effectiveLanguage == "ne" ? "ने.सं." : "N.S."}{" "}

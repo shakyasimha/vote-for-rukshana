@@ -12,6 +12,17 @@ export const nithyaRanjana = localFont({
   display: "swap",
 });
 
+/* Brahmi Lipi for Pali */
+export const brahmiLipi = localFont({
+  src: [
+    {
+      path: "./../../public/fonts/NotoSansBrahmi-Regular.ttf",
+      weight: "400", // Using the same font file for both regular and bold weights
+      style: "normal",
+    },
+  ]
+});
+
 /* 🔤 Alegreya Sans */
 export const alegreyaSans = localFont({
   src: [
@@ -363,30 +374,6 @@ export const notoSansBengali = localFont({
       weight: "100 900", // full variable range
       style: "normal",
     },
-    // // Regular
-    // {
-    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Regular.ttf",
-    //   weight: "400",
-    //   style: "normal",
-    // },
-    // // Bold
-    // {
-    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Bold.ttf",
-    //   weight: "700",
-    //   style: "normal",
-    // },
-    // // Italic
-    // {
-    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-Italic.ttf",
-    //   weight: "400",
-    //   style: "italic",
-    // },
-    // // Bold Italic
-    // {
-    //   path: "./../../public/fonts/Noto_Sans_Bengali/static/NotoSansBengali-BoldItalic.ttf",
-    //   weight: "700",
-    //   style: "italic",
-    // },
   ],
   display: "swap",
 });
@@ -399,6 +386,30 @@ export const notoSansKaithi = localFont({
       weight: "400",
       style: "normal" 
     },
+  ],
+  display: "swap",
+});
+
+/* Gurmukhi for Punjabi */
+export const gurmukhi = localFont({
+  src: [
+    {
+      path: "./../../public/fonts/NotoSansGurmukhi-VariableFont_wdth,wght.ttf",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+});
+
+/* Arabic Script */
+export const arabic = localFont({
+  src: [
+    {
+      path: "./../../public/fonts/Noto_Sans_Arabic/NotoSansArabic-VariableFont_wdth,wght.ttf",
+      weight: "100 900",
+      style: "normal",
+    }
   ],
   display: "swap",
 });

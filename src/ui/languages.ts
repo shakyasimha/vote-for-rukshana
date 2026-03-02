@@ -1,24 +1,6 @@
 // The languages used in the main content of the website
 
 export const languages = [
-  "ne",
-  "en",
-  "nb",       // Nepal Bhasa
-  "nbd",      // Dolakha dialect of Nepal Bhasa
-  "nsl",      // Nepali Sign Language
-  "bo",       // Tibetan
-  "hi",       // Hindi
-  "bn",       // Bengali
-  "ur",       // Urdu
-  "bhj",      // Bhojpuri
-  "bhjd", // Bhojpuri in Devanagari script
-  "mai",      // Maithili
-  "maid", // Maithili in Devanagari script
-  "xsr",      // Sherpa
-  "tmg",      // Tamang
-  "tmgd", // Tamang in Devanagari script
-  
-  // Other langauges
   "acchami",
   "angika",
   "awadhi",
@@ -26,22 +8,62 @@ export const languages = [
   "baitadeli",
   "bajhangi",
   "bajjika",
+  "bajureli",
+  "bambule",
   "bantawa",
+  "bhojpuri",
+  "bhojpuri_deva",
+  "bn",
+  "bo",
   "chamling",
   "chhantyal",
   "chhepang",
+  "chhintang",
   "dadeldhuri",
+  "dhimal",
+  "dolakha", // Matches nbd in your previous logic, now standardized as 'dolakha'
   "doteli",
+  "dumi",
   "dungmali",
+  "en",
   "haryanvi",
+  "hi",
   "jirel",
   "kumal",
   "lhomi",
   "lohorong",
+  "magahi",
+  "maithili",
+  "maithili_deva",
+  "majhi",
+  "marwadi",
   "mgrkham",
+  "nb",
+  "ne",
+  "nsl",
+  "pali",
+  "palideva",
+  "palinewa",
+  "puma",
+  "punjabi",
+  "rajbanshi",
+  "sindhi",
+  "skt",
+  "sktnewa",
   "sonaha",
   "tajpuriya",
-  "dumi",
+  "tamu",
+  "thami",
+  "tharu-kochila",
+  "tharu-lampuchwa",
+  "tharu-rana",
+  "tharu-saptariya",
+  "tmg",
+  "tmgd",
+  "ur",
+  "urav",
+  "xsr",
+  "yakkha",
 ] as const;
 
 export type Language = (typeof languages)[number];

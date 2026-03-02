@@ -77,15 +77,16 @@ export default async function Home({ params }: PageProps) {
             </section>
 
             {/* Pamphlet Section */}
-            <section id="pamphlet" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
+            {/* <section id="pamphlet" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
                 <h2 className={`${font[activeLangUI].headerFont} ${activeLangUI === "nb" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}>
                 {activeLangUI === "en" ? "Pamphlet" : "प्रचारपत्र"}
                 </h2>
-            </section>
+            </section> */}
 
             {/* Social Links */}
-            <section id="links" className="w-full bg-[#292f8c] py-16">
-                <h2 className={`${font[activeLangUI].headerFont} ${activeLangUI === "nb" ? "" : "font-bold"} mb-16 text-4xl text-center text-white`}>
+            {/* Use bg-[#292f8c] for blue and bg-[#f5f5fc] for white */}
+            <section id="links" className="w-full bg-[#f5f5fc] py-16">
+                <h2 className={`${font[activeLangUI].headerFont} ${activeLangUI === "nb" ? "" : "font-bold"} mb-16 text-4xl text-center text-[#ac221f]`}>
                 {activeLangUI === "en"
                     ? "Connect With Me On Social Media"
                     : activeLangUI === "nb"
@@ -99,17 +100,18 @@ export default async function Home({ params }: PageProps) {
                 <SocialLink href="https://x.com/RukshanaNPolicy" icon={<FaXTwitter size={40} color="#000000" />} label={activeLangUI === "en" ? "X" : activeLangUI === "nb" ? "𑐊𑐎𑑂𑐳" : "एक्स्"} />
                 <SocialLink href="https://www.tiktok.com/@rukshanainpolitics" icon={<FaTiktok size={40} color="#000" />} label={activeLangUI === "en" ? "TikTok" : activeLangUI === "nb" ? "𑐟𑐶𑐎𑐟𑐎" : "टिकटक"} />
                 <div className="sm:col-span-2 flex justify-center">
-                    <SocialLink href="https://rukshanakapali.com.np/" icon={<FaGlobe size={40} color="#f5f5fc" />} label={activeLangUI === "en" ? "Personal Website" : activeLangUI === "nb" ? "𑐠𑑅𑐐𑐸 𑐰𑐾𑐧𑐳𑐵𑐃𑐚" : "व्यक्तिगत वेबसाइट"} />
+                    <SocialLink href="https://rukshanakapali.com.np/" icon={<FaGlobe size={40} color="#292f8c" />} label={activeLangUI === "en" ? "Personal Website" : activeLangUI === "nb" ? "𑐠𑑅𑐐𑐸 𑐰𑐾𑐧𑐳𑐵𑐃𑐚" : "व्यक्तिगत वेबसाइट"} />
                 </div>
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="w-full bg-[#f5f5fc] mx-auto px-4 py-12">
-                <h2 className={`${font[activeLangUI].headerFont} ${activeLangUI === "nb" ? "" : "font-bold"} mb-8 text-4xl text-center text-[#ac221f]`}>
+            {/* Use bg-[#292f8c] for blue and bg-[#f5f5fc] for white */}
+            <section id="contact" className="w-full bg-[#292f8c] mx-auto px-4 py-12">
+                <h2 className={`${font[activeLangUI].headerFont} ${activeLangUI === "nb" ? "" : "font-bold"} mb-8 text-4xl text-center text-white`}>
                     {activeLangUI === "en" ? "Contact" : activeLangUI === "nb" ? "स्वापू" : "सम्पर्क"}
                 </h2>
-                <div className={`${font[activeLangUI].bodyFont} flex flex-col md:flex-row items-center justify-center md:gap-16 text-center text-black`}>
+                <div className={`${font[activeLangUI].bodyFont} flex flex-col md:flex-row items-center justify-center md:gap-16 text-center text-white`}>
                 <ContactPerson name={activeLangUI === "en" ? "Siddhartha Ratna Guvaju" : activeLangUI === "nb" ? "𑐳𑐶𑐡𑑂𑐢𑐵𑐬𑑂𑐠 𑐬𑐟𑑂𑐣 𑐐𑐸𑐨𑐵𑐖𑐸" : "सिद्धार्थ रत्न गुभाजु"} title={activeLangUI === "en" ? "Secretary" : activeLangUI === "nb" ? "𑐳𑐔𑐶𑐰" : "सचिव"} email="rukshanasecretariat1@gmail.com" activeLang={activeLangUI} />
                 <div className="hidden md:block w-0.5 h-20 bg-[#ac221f] mx-4"></div>
                 <ContactPerson name={activeLangUI === "en" ? "Pratik Thapa" : activeLangUI === "nb" ? "𑐥𑑂𑐬𑐟𑐶𑐎 𑐠𑐵𑐥𑐵" : "प्रतिक थापा"} title={activeLangUI === "en" ? "Secretary" : activeLangUI === "nb" ? "𑐳𑐔𑐶𑐰" : "सचिव"} email="rukshanasecretariat2@gmail.com" activeLang={activeLangUI} />
