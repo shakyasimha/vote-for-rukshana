@@ -413,3 +413,27 @@ export const arabic = localFont({
   ],
   display: "swap",
 });
+
+/* Limbu font */
+export const limbu = localFont({
+  src: [
+    {
+      path: "./../../public/fonts/NotoSansLimbu-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    }
+  ],  
+  display: "swap",
+});
+
+/* Santhali Ol Chiki font */
+export const santhali = localFont({
+  src: [
+    {
+      path: "./../../public/fonts/NotoSansOlChiki-VariableFont_wght.ttf",
+      weight: "100 900",
+      style: "normal",
+    }
+  ],
+  display: "swap",
+})

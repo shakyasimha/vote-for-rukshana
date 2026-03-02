@@ -14,6 +14,8 @@ import {
   newaLipi,
   gurmukhi,
   arabic,
+  limbu, 
+  santhali
 } from "@/ui/fonts";
 import type { Language } from "@/ui/languages";
 
@@ -77,6 +79,16 @@ const arabicDefault: FontConfig = {
   bodyFont: arabic.className,
 };
 
+const limbuDefault: FontConfig = {
+  headerFont: limbu.className,
+  bodyFont: limbu.className,
+};
+
+const santhaliDefault: FontConfig = {
+  headerFont: santhali.className,
+  bodyFont: santhali.className,
+};
+
 export const font: Record<Language, FontConfig> = {
   acchami: devanagariDefault,
   angika: devanagariDefault,
@@ -97,8 +109,9 @@ export const font: Record<Language, FontConfig> = {
   chhepang: devanagariDefault,
   chhintang: devanagariDefault,
   dadeldhuri: devanagariDefault,
+  danuwar: devanagariDefault,
   dhimal: devanagariDefault,
-  dolakha: devanagariDefault,
+  dolpo: tibetanDefault,
   doteli: devanagariDefault,
   dumi: devanagariDefault,
   dungmali: devanagariDefault,
@@ -106,16 +119,26 @@ export const font: Record<Language, FontConfig> = {
   haryanvi: devanagariDefault,
   hi: devanagariDefault,
   jirel: devanagariDefault,
+  khas: devanagariDefault,
+  kisan: devanagariDefault,
+  koch: devanagariDefault,
+  koich: devanagariDefault,
   kumal: devanagariDefault,
   lhomi: devanagariDefault,
+  limbu: limbuDefault,
   lohorong: devanagariDefault,
   magahi: devanagariDefault,
   maithili: maithiliTirhuta,
   maithili_deva: devanagariDefault,
   majhi: devanagariDefault,
   marwadi: devanagariDefault,
-  mgrkham: devanagariDefault,
+  "magar-dhut": devanagariDefault,
+  "magar-kham": devanagariDefault,
   nb: nepalBhasaDefault,
+  "nb-balami": devanagariDefault,
+  "nb-dolakha": devanagariDefault,
+  "nb-gopali": devanagariDefault,
+  "nb-khwopa": nepalBhasaDefault,
   ne: devanagariDefault,
   nsl: devanagariDefault,
   pali: paliDefault,
@@ -124,10 +147,12 @@ export const font: Record<Language, FontConfig> = {
   puma: devanagariDefault,
   punjabi: punjabiDefault,
   rajbanshi: devanagariDefault,
+  santhali: santhaliDefault,
   sindhi: arabicDefault,
   skt: devanagariDefault,
   sktnewa: nepalBhasaDefault,
   sonaha: devanagariDefault,
+  syuba: devanagariDefault,
   tajpuriya: devanagariDefault,
   tamu: devanagariDefault,
   thami: devanagariDefault,
@@ -135,10 +160,12 @@ export const font: Record<Language, FontConfig> = {
   "tharu-lampuchwa": devanagariDefault,
   "tharu-rana": devanagariDefault,
   "tharu-saptariya": devanagariDefault,
+  thulung: devanagariDefault,
   tmg: tibetanDefault,
   tmgd: devanagariDefault,
   ur: urduDefault,
   urav: devanagariDefault,
   xsr: tibetanDefault,
   yakkha: devanagariDefault,
+  yakthung: devanagariDefault
 };

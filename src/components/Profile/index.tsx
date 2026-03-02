@@ -22,8 +22,7 @@ type ProfileProps = {
 export default function Profile({ lang = "nb" }: ProfileProps) {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const [scrolled, setScrolled] = useState(false);
-  const effectiveLanguage = (['en', 'ne', 'nb', 'tib'].includes(lang) ? lang : 'ne') as 'en' | 'ne' | 'nb' | 'tib';
-
+  const effectiveLanguage = (['en', 'ne', 'nb', 'bo'].includes(lang) ? lang : 'ne') as 'en' | 'ne' | 'nb' | 'bo';
   // 🔹 Get profile data for selected language, fallback to "nb"
   const profileData: ProfileData = profile[effectiveLanguage] || profile.nb;
 
@@ -75,6 +74,18 @@ export default function Profile({ lang = "nb" }: ProfileProps) {
 
           {/* Text */}
           <div className="flex-1 flex flex-col gap-3 text-center md:text-left">
+            {/* Election Symbol */}
+            {/* <div className={`transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-100"}`}>
+              <Image
+                src="/pdp-eye.png"
+                alt="Election Symbol"
+                width={60} // Adjust size as needed
+                height={60}
+                className="mx-auto md:mx-0 object-contain"
+                priority // Ensures the symbol loads quickly
+              />
+            </div> */}
+            
             {/* Name */}
             <h1
               ref={nameRef}
