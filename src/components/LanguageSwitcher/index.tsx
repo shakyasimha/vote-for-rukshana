@@ -116,7 +116,7 @@ const languageNames: Record<Language, string> = {
   majhi: "माझी",
   marwadi: "मारवाडी",
   mgrkham: "मगर खाम",
-  maithili: "𑒧𑒻",
+  maithili: "𑒧𑒻𑒟𑒱𑒪𑒲",
   "maithili_deva": "मैथिली",
   pali: "𑀧𑀸𑀮𑀺",
   palideva: "पालि",
@@ -138,7 +138,7 @@ const languageNames: Record<Language, string> = {
   tmg: "ཏ་མང་།",
   tmgd: "तामाङ",
   ur: "اُردُو།",
-  urav: "उराव",
+  urav: "उराँव",
   xsr: "ཤར་བའི་གཏམ།",
   yakkha: "याक्खा",
 };
