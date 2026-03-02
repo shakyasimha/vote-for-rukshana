@@ -7,24 +7,24 @@ import { type Language, languages as allLanguages } from "@/ui/languages";
 
 const languageLabels: Record<Language, string> = {
   ne: "ने", en: "EN", nb: "𑐣𑐾", nbd: "दो", nsl: "ने", bo: "བོ", hi: "हि", bn: "बं", ur: "اردو",
-  bhj: "𑂦𑂷", bhjd: "भो", mai: "𑒧𑒻", maid: "मै", xsr: "शे", tmg: "ता", tmgd: "ता",
+  bhj: "𑂦𑂷", bhjd: "भो", mai: "𑒧𑒻", maid: "मै", xsr: "ཤ", tmg: "ཏ", tmgd: "ता",
   acchami: "अछा", angika: "अं", awadhi: "अव", bahing: "बा", baitadeli: "बै",
   bajhangi: "बझा", bajjika: "बज्जि", bantawa: "बाम", chamling: "चाम",
   chhantyal: "छन्त्या", chhepang: "छे", dadeldhuri: "डडे", doteli: "डो",
-  dungmali: "डुं", haryanvi: "हर", jirel: "जि", kumal: "कु", lhomi: "ल्हो",
+  dungmali: "दुं", haryanvi: "हर", jirel: "जि", kumal: "कु", lhomi: "ल्हो",
   lohorong: "लोहो", "mgrkham": "खाम", sonaha: "सो", tajpuriya: "ताज",
   dumi: "दु",
 };
 
 const languageNames: Record<Language, string> = {
-  ne: "नेपाली", en: "English", nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵", nbd: "दोलखा नेपालभाषा", nsl: "नेपाली सांकेतिक",
+  ne: "नेपाली", en: "English", nb: "𑐣𑐾𑐥𑐵𑐮𑐨𑐵𑐳𑐵", nbd: "दोलखा नेपालभाषा", nsl: "सांकेतिक भाषा",
   bo: "བོད་ཡིག", hi: "हिन्दी", bn: "বাংলা", ur: "اردو",
   bhj: "𑂦𑂷𑂔𑂣𑂳𑂩𑂲", bhjd: "भोजपुरी", mai: "𑒧𑒻𑒟𑒱𑒪𑒲", maid: "मैथिली",
-  xsr: "Sherpa (བོད་ཡིག)", tmg: "Tamang (བོད་ཡइག)", tmgd: "तामाङ",
+  xsr: "ཤར་བའི་གཏམ", tmg: "ཏ་མང་།", tmgd: "तामाङ",
   acchami: "अछामी", angika: "अङ्गिका", awadhi: "अवधी", bahing: "बाहिङ",
   baitadeli: "बैतडेली", bajhangi: "बझाङ्गी", bajjika: "बज्जिका", bantawa: "बान्तावा",
   chamling: "चाम्लिङ",  chhantyal: "छन्त्याल", chhepang: "चेपाङ",
-  dadeldhuri: "डडेल्धुरी", doteli: "डोटेली", dungmali: "डुङ्माली",
+  dadeldhuri: "डडेल्धुरी", doteli: "डोटेली", dungmali: "दुङ्माली",
   haryanvi: "हरियाणवी", jirel: "जिरेल", kumal: "कुमाल", lhomi: "ल्होमी",
   lohorong: "लोहोरुङ", "mgrkham": "मगर खाम", sonaha: "सोनाहा", tajpuriya: "ताजपुरिया", 
   dumi: "दुमी",
